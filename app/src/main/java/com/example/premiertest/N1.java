@@ -10,6 +10,7 @@ import android.widget.Button;
 public class N1 extends AppCompatActivity {
     private Button backbt;
     private Button ba1;
+    private Button bs1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,8 +30,19 @@ public class N1 extends AppCompatActivity {
         ba1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent otherAct =new Intent(getApplicationContext(), Add1.class);
-                startActivity(otherAct);
+                Intent otherAct1 =new Intent(getApplicationContext(), Add1.class);
+                startActivity(otherAct1);
+                finish();
+            }
+        });
+
+        this.bs1= (Button)findViewById(R.id.bs1);
+
+        bs1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent otherAct2 =new Intent(getApplicationContext(), Sous1.class);
+                startActivity(otherAct2);
                 finish();
             }
         });
