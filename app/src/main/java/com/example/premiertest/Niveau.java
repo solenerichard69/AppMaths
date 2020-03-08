@@ -10,7 +10,7 @@ import android.widget.Button;
 public class Niveau extends AppCompatActivity {
 
     private Button bn1;
-    private Button backbt;
+    private Button backbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +28,9 @@ public class Niveau extends AppCompatActivity {
                 }
             });
 
-        this.backbt= (Button)findViewById(R.id.backbt);
+        this.backbtn= (Button)findViewById(R.id.backbt);
 
-        backbt.setOnClickListener(new View.OnClickListener() {
+        backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent otherAct =new Intent(getApplicationContext(), MainActivity.class);

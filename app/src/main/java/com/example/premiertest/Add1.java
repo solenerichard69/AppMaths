@@ -6,26 +6,31 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.Chronometer;
 import android.widget.TextView;
 
 
 
 public class Add1 extends AppCompatActivity {
+    public static Chronometer chrono;
     Integer sucess=0;
     Integer score=0;
-    private Button backbt;
+    private Button backbta1;
+    boolean go=true;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add1);
-        this.backbt= (Button)findViewById(R.id.backbt);
+        this.backbta1= (Button)findViewById(R.id.backbt);
 
-        backbt.setOnClickListener(new View.OnClickListener() {
+        backbta1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent otherAct =new Intent(getApplicationContext(), Niveau.class);
                 startActivity(otherAct);
+
                 finish();
             }
         });
@@ -53,6 +58,16 @@ public class Add1 extends AppCompatActivity {
         affichagescore.setText("Score : "+score);
 
 
+     /* Intent otherAct1 = getIntent();
+        if (otherAct1!= null){
+            Boolean goChrono=false;
+            if (otherAct1.hasExtra("GoChro")){
+                goChrono=otherAct1.getBooleanExtra("GoChro", true);
+                if(goChrono=true) {
+                    chrono.start();
+                }
+            }
+        } */
 
 
     }
@@ -71,6 +86,15 @@ public class Add1 extends AppCompatActivity {
         {
             TextView resultat = (TextView) findViewById(R.id.resultat);
             resultat.setText("Dommage !");
+        }
+
+    }
+
+
+    public void Chrono (){
+
+        if(go=true){
+            chrono.start();
         }
 
     }
