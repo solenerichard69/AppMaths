@@ -59,7 +59,9 @@
                 android:layout_margin="6dp"
                 android:layout_weight="1"
                 android:background="#66CDAA"
-                android:text="ADDITION" />
+                android:text="ADDITION"
+                android:onClick="startChronoN1"
+                />
 
 
             <Button
