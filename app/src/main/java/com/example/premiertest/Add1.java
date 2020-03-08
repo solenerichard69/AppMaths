@@ -91,12 +91,12 @@ public class Add1 extends AppCompatActivity {
     }
 
 
-    public void Chrono (){
+   /* public void Chrono (){
 
         if(go=true){
             chrono.start();
         }
 
-    }
+    }*/
     }
 
