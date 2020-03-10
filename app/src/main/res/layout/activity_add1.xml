@@ -65,7 +65,7 @@
 
 
             <EditText
-                android:id="@+id/editText"
+                android:id="@+id/remplir"
                 android:layout_width="100dp"
                 android:layout_height="41dp"
                 android:layout_weight="1"
@@ -74,7 +74,7 @@
   />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/ok"
                 android:layout_width="49dp"
                 android:layout_height="44dp"
                 android:layout_weight="1"

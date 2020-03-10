@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Chronometer;
+import android.widget.EditText;
 import android.widget.TextView;
 
 
@@ -34,8 +35,8 @@ public class Add1 extends AppCompatActivity {
                 finish();
             }
         });
-        //Mise en place de l'affichage du calcul
 
+        //Mise en place de l'affichage du calcul
         Integer a = 0;
         Integer b = 0;
 
@@ -45,17 +46,24 @@ public class Add1 extends AppCompatActivity {
         TextView test = (TextView) findViewById(R.id.test);
         test.setText(""+a+" + "+b+" =  ?");
         Integer result = a+b; //Calcul du résultat attendu
-        Integer nb=a; //Test de résultat
+        //Integer nb=a; //Test de résultat
 
-        // EditText remplir = (EditText) findViewById(R.id.remplir);
+        //NE MARCHE PAS
+        //Récupére la valeur d'édit text et la vérifie
+        Button ok = findViewById(R.id.ok);
+        ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText remplir = (EditText)findViewById(R.id.remplir);
+                int nb = (int) Integer.parseInt(remplir.getText().toString());
 
+                Verification(result,nb);
+                CalculScore(sucess);
 
-        //A METTRE UNE FOIS QUE LE EDIT TEXT EST REMPLI
-        Verification(result,nb);
-        CalculScore(sucess);
-
-        TextView affichagescore = (TextView) findViewById(R.id.affichagescore);
-        affichagescore.setText("Score : "+score);
+                TextView affichagescore = (TextView) findViewById(R.id.affichagescore);
+                affichagescore.setText("Score : "+score);
+            }
+        });
 
 
      /* Intent otherAct1 = getIntent();
@@ -69,8 +77,8 @@ public class Add1 extends AppCompatActivity {
             }
         } */
 
-
     }
+
 
     public void CalculScore (int sucess){
         score=+sucess;
