@@ -18,6 +18,7 @@ public class Add1 extends AppCompatActivity {
     Integer score=0;
     private Button backbta1;
     boolean go=true;
+    Integer result;
 
 
     @Override
@@ -45,10 +46,10 @@ public class Add1 extends AppCompatActivity {
 
         TextView test = (TextView) findViewById(R.id.test);
         test.setText(""+a+" + "+b+" =  ?");
-        Integer result = a+b; //Calcul du résultat attendu
-        //Integer nb=a; //Test de résultat
+        result = a+b; //Calcul du résultat attendu
+        //Integer nb=a; //Test de résult
 
-        //NE MARCHE PAS
+
         //Récupére la valeur d'édit text et la vérifie
         Button ok = findViewById(R.id.ok);
         ok.setOnClickListener(new View.OnClickListener() {
