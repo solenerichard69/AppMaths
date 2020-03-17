@@ -19,7 +19,7 @@ public class Add1 extends AppCompatActivity {
     private Button backbta1;
     boolean go=true;
     Integer result;
-
+    Integer result1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,13 +41,15 @@ public class Add1 extends AppCompatActivity {
         Integer a = 0;
         Integer b = 0;
 
+
         a = 1 + (int) (Math.random() * (100));
         b = 1 + (int) (Math.random() * (100));
+
 
         TextView test = (TextView) findViewById(R.id.test);
         test.setText(""+a+" + "+b+" =  ?");
         result = a+b; //Calcul du résultat attendu
-        //Integer nb=a; //Test de résult
+
 
 
         //Récupére la valeur d'édit text et la vérifie
@@ -63,8 +65,23 @@ public class Add1 extends AppCompatActivity {
 
                 TextView affichagescore = (TextView) findViewById(R.id.affichagescore);
                 affichagescore.setText("Score : "+score);
+
+
             }
         });
+
+        Button suivant = findViewById(R.id.suivant);
+        suivant.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int c = 1 + (int) (Math.random() * (100));
+                int d = 1 + (int) (Math.random() * (100));
+                TextView test = (TextView) findViewById(R.id.test);
+                test.setText(""+c+" + "+d+" =  ?");
+                result1 = c+d; //Calcul du résultat attendu
+            }
+        });
+
 
 
      /* Intent otherAct1 = getIntent();
@@ -98,6 +115,7 @@ public class Add1 extends AppCompatActivity {
         }
 
     }
+
 
 
    /* public void Chrono (){
