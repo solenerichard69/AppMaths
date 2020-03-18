@@ -51,12 +51,12 @@ public class Add1 extends AppCompatActivity {
         result = a+b; //Calcul du résultat attendu
 
 
-
         //Récupére la valeur d'édit text et la vérifie
         Button ok = findViewById(R.id.ok);
         ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 EditText remplir = (EditText)findViewById(R.id.remplir);
                 int nb = (int) Integer.parseInt(remplir.getText().toString());
 
@@ -65,6 +65,15 @@ public class Add1 extends AppCompatActivity {
 
                 TextView affichagescore = (TextView) findViewById(R.id.affichagescore);
                 affichagescore.setText("Score : "+score);
+                remplir.getText().clear();
+
+                //Fonction pour ne pas tricher
+                /*
+                if(){
+                    ok.setClickable(false);
+                }
+                 */
+
 
 
             }
@@ -78,9 +87,14 @@ public class Add1 extends AppCompatActivity {
                 int d = 1 + (int) (Math.random() * (100));
                 TextView test = (TextView) findViewById(R.id.test);
                 test.setText(""+c+" + "+d+" =  ?");
-                result1 = c+d; //Calcul du résultat attendu
+
+                result = c+d; //Calcul du résultat attendu
+
+
             }
         });
+
+
 
 
 
@@ -102,16 +116,18 @@ public class Add1 extends AppCompatActivity {
         score=+sucess;
     }
 
-    public void Verification(int result, int result2){
+    public boolean Verification(int result, int result2){
         if(result==result2){
             sucess++;
 
             TextView resultat = (TextView) findViewById(R.id.resultat);
             resultat.setText("Bien joué !!!");
+            return true;
         }else
         {
             TextView resultat = (TextView) findViewById(R.id.resultat);
             resultat.setText("Dommage !");
+            return false;
         }
 
     }
