@@ -67,14 +67,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="N2" />
+                android:text="Niveau 2" />
 
             <Button
                 android:id="@+id/bn3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="N3" />
+                android:text="Niveau 3" />
         </TableRow>
 
 
