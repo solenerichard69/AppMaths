@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.os.CountDownTimer;
-import android.widget.Chronometer;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -23,10 +22,10 @@ public class Add1 extends AppCompatActivity {
     Integer result1;
     Integer cpt=1;
     Integer triche=0;
-    public int counter = 30;
+    public int counter = 3; // temps de countdown en secondes
 
 
-    TextView chrono;
+    TextView chrono; // déclaration du textview chrono présent dans layout
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +52,12 @@ public class Add1 extends AppCompatActivity {
                 chrono.setText(counter+"");
             }
             public void onFinish(){
+                int ValScore = score;
+                Intent otherAct =new Intent(getApplicationContext(), afficheScore.class);
+                otherAct.putExtra("Valeur", ValScore);
+                startActivity(otherAct);
+                finish();
+
 
             }
         }.start();
