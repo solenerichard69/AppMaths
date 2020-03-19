@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.os.CountDownTimer;
+import android.widget.Chronometer;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -22,8 +23,10 @@ public class Add1 extends AppCompatActivity {
     Integer result1;
     Integer cpt=1;
     Integer triche=0;
-    public int counter;
+    public int counter = 30;
 
+
+    TextView chrono;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,19 +44,18 @@ public class Add1 extends AppCompatActivity {
             }
         });
 
-        ba1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                new  CountDownTimer(30000, 1000){
-                    public void onTick (long millisUntilFinish){
-                        counter++;
-                    }
-                    public void onFinish(){
 
-                    }
-                }.start();
+        this.chrono= (TextView) findViewById(R.id.chrono);
+        new  CountDownTimer(counter*1000, 1000){
+            public void onTick (long millisUntilFinish){
+                counter--;
+
+                chrono.setText(counter+"");
             }
-        });
+            public void onFinish(){
+
+            }
+        }.start();
 
 
         //Mise en place de l'affichage du calcul
@@ -161,5 +163,4 @@ public class Add1 extends AppCompatActivity {
 
     }
 
-    }
-
+}
