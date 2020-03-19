@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Chronometer;
+import android.os.CountDownTimer;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -14,15 +14,16 @@ import android.widget.TextView;
 
 
 public class Add1 extends AppCompatActivity {
-    public static Chronometer chrono;
     Integer sucess=0;
     Integer score=0;
     private Button backbta1;
-    boolean go=true;
+
     Integer result;
     Integer result1;
     Integer cpt=1;
     Integer triche=0;
+    public int counter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,21 @@ public class Add1 extends AppCompatActivity {
                 finish();
             }
         });
+
+        ba1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new  CountDownTimer(30000, 1000){
+                    public void onTick (long millisUntilFinish){
+                        counter++;
+                    }
+                    public void onFinish(){
+
+                    }
+                }.start();
+            }
+        });
+
 
         //Mise en place de l'affichage du calcul
         Integer a = 0;
@@ -120,19 +136,6 @@ public class Add1 extends AppCompatActivity {
 
 
 
-
-
-     /* Intent otherAct1 = getIntent();
-        if (otherAct1!= null){
-            Boolean goChrono=false;
-            if (otherAct1.hasExtra("GoChro")){
-                goChrono=otherAct1.getBooleanExtra("GoChro", true);
-                if(goChrono=true) {
-                    chrono.start();
-                }
-            }
-        } */
-
     }
 
 
@@ -158,14 +161,5 @@ public class Add1 extends AppCompatActivity {
 
     }
 
-
-
-   /* public void Chrono (){
-
-        if(go=true){
-            chrono.start();
-        }
-
-    }*/
     }
 

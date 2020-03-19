@@ -15,6 +15,7 @@ public class N1 extends AppCompatActivity {
     private Button bs1;
    public static boolean goChrono;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
