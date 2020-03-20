@@ -27,7 +27,7 @@ public class N1 extends AppCompatActivity {
             public void onClick(View v) {
                 Intent otherAct =new Intent(getApplicationContext(), Niveau.class);
                 startActivity(otherAct);
-                finish();
+               // finish(); (voir Niveau)
             }
         });
         this.ba1= (Button)findViewById(R.id.ba1);
@@ -37,10 +37,10 @@ public class N1 extends AppCompatActivity {
             public void onClick(View v) {
                 Intent otherAct1 =new Intent(getApplicationContext(), Add1.class);
                 startActivity(otherAct1);
-
-                finish();
+// finish(); (voir Niveau)
             }
         });
+
 
         this.bs1= (Button)findViewById(R.id.bs1);
 

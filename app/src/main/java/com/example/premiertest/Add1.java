@@ -14,54 +14,80 @@ import android.widget.TextView;
 
 
 public class Add1 extends AppCompatActivity {
+    public int counter = 30; // temps de countdown en secondes
     Integer sucess=0;
     Integer score=0;
-    private Button backbta1;
-
     Integer result;
     Integer result1;
     Integer cpt=1;
     Integer triche=0;
-    public int counter = 3; // temps de countdown en secondes
-
-
     TextView chrono; // déclaration du textview chrono présent dans layout
+    private Button backbta1;
 
+   // la méthode onCreate() est appelée à la création de l'activité
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // on associe l'acticité au layout du meme nom
         setContentView(R.layout.activity_add1);
+        /* cette activité comporte :
+        - un textview nommé chrono
+        - un bouton nommé backbt (pour revenir en arriere )
+        ...
+         */
+
+        // *********************************//
+        // mise en place du bouton "retour"
+        // *********************************//
+
+        // on lie le bouton backbt avec l'attribut de classe backbta1
         this.backbta1= (Button)findViewById(R.id.backbt);
 
         backbta1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent otherAct =new Intent(getApplicationContext(), Niveau.class);
-                startActivity(otherAct);
-
+            public void onClick(View v) { // action effectuée quand on clique sur "back"
+                // on ferme simplement l'activité. Si l'activité appelante  (ici Niveau.class) n'était
+                // pas fermée, on reviendra automatiquement dessus. Elle était en arriere-plan.
                 finish();
             }
         });
 
+        // *********************************//
+        // mise en place du chronometre
+        // *********************************//
 
+        // chrono le textview de l'activite sera utilisé pour afficher le chronometre
+        // On lie chrono l'attribut, avec chrono le textview du layout.
+        // on affichera la valeur du chronometre à l'interieur de chrono
         this.chrono= (TextView) findViewById(R.id.chrono);
-        new  CountDownTimer(counter*1000, 1000){
-            public void onTick (long millisUntilFinish){
-                counter--;
 
-                chrono.setText(counter+"");
+        // on définit un nouveau compte à rebours : objet CountDownTimer
+        // on lui passe en parametre le nombre de seconde (counter) et le délai entre chaque tic (1s)
+        CountDownTimer monCompteARebours =  new  CountDownTimer(counter*1000, 1000){
+            // on redéfinit la méthode onTick : que fait-t'on à chaque seconde décrémentée?
+            public void onTick (long millisUntilFinish){
+                counter--; // on diminue le temps restant
+                chrono.setText(counter+""); // on met a jour l'affichage sur l'activité
             }
+
+            // on redéfinit la méthode onFinish : que fait-t'on à la fin du compte à rebours?
             public void onFinish(){
                 int ValScore = score;
                 Intent otherAct =new Intent(getApplicationContext(), afficheScore.class);
                 otherAct.putExtra("Valeur", ValScore);
                 startActivity(otherAct);
                 finish();
-
-
             }
-        }.start();
+        };
 
+        // on lance le compte a rebours :
+
+        monCompteARebours.start();
+
+        // *********************************//
+        // reste du code
+        // *********************************//
 
         //Mise en place de l'affichage du calcul
         Integer a = 0;
@@ -168,5 +194,5 @@ public class Add1 extends AppCompatActivity {
 
     }
 
-    }
+}
 

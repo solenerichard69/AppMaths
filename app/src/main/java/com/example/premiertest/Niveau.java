@@ -24,7 +24,9 @@ public class Niveau extends AppCompatActivity {
                 public void onClick(View v) {
                     Intent otherAct =new Intent(getApplicationContext(), N1.class);
                     startActivity(otherAct);
-                    finish();
+                    // finish();
+                    // j'enleve le finish ici. Tout simplement car c'est mieux : on laisse
+                    // l'activité en arriere plan, comme ca si on ferme l'activité  N1, on revient a Niveau auto
                 }
             });
 
