@@ -116,12 +116,12 @@ public class Add1 extends AppCompatActivity {
                 int nb = (int) Integer.parseInt(remplir.getText().toString());
 
 
-                /* Pour éviter que lorsqu'on appuie sur OK sans edit text ca crash
+                //Pour éviter que lorsqu'on appuie sur OK sans edit text ca crash
                                 if(remplir.getText()==null){
                     TextView resultat = (TextView) findViewById(R.id.resultat);
                     resultat.setText("ERREUR");
                 }else
-                 */
+
 
                 Verification(result,nb);
                 CalculScore(sucess);
@@ -136,14 +136,14 @@ public class Add1 extends AppCompatActivity {
 
 
         //Fonction pour ne pas tricher
-        /*
+
                 if(triche ==1){
-            ok.setEnabled(false);
+            ok.setClickable(false);
         }else
             if(triche==0){
-                ok.setEnabled(true);
+                ok.setClickable(true);
             }
-         */
+
 
 
 
