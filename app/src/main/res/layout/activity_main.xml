@@ -2,31 +2,38 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fond_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFA07A"
+
+    android:maxWidth="720dp"
+    android:maxHeight="1280dp"
+    android:minWidth="470dp"
+    android:minHeight="320dp"
+    android:visibility="visible"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/goniveau"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#66CDAA"
+        android:background="#D2B48C"
         android:text="JOUER"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.82" />
 
     <Button
         android:id="@+id/bclav2"
         android:layout_width="70dp"
         android:layout_height="34dp"
-        android:layout_marginTop="66dp"
         android:background="#D2B48C"
         android:text="Clavier 2 "
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.921"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/goniveau" />
 
@@ -36,5 +43,19 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="20dp" />
+
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="109dp"
+        android:layout_marginLeft="109dp"
+        android:layout_marginBottom="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/bclav2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_nuageg" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
