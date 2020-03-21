@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 public class afficheScore extends AppCompatActivity {
     private Button rejouer;
+    private Button rejouer2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,17 +32,24 @@ public class afficheScore extends AppCompatActivity {
         }
 
 
-
-        // *********************************//
-        // mise en place du bouton "rejouer"
-        // *********************************//
-
+        //Rester au niveau 1
         this.rejouer= (Button)findViewById(R.id.rejouer);
         rejouer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) { // action effectuée quand on clique sur "back"
                 // on ferme simplement l'activité. Si l'activité appelante n'était
                 // pas fermée, on reviendra automatiquement dessus. Elle était en arriere-plan.
+                finish();
+            }
+        });
+
+        //Changer de niveau
+        this.rejouer2= (Button)findViewById(R.id.rejouer2);
+        rejouer2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent otherAct =new Intent(getApplicationContext(), Niveau.class);
+                startActivity(otherAct);
                 finish();
             }
         });
