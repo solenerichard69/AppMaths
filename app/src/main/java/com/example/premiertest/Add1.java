@@ -119,7 +119,7 @@ public class Add1 extends AppCompatActivity {
                 //Pour éviter que lorsqu'on appuie sur OK sans edit text ca crash
                                 if(remplir.getText()==null){
                     TextView resultat = (TextView) findViewById(R.id.resultat);
-                    resultat.setText("ERREUR");
+                    resultat.setText("ERREUR, veuillez saisir un nombre");
                 }else
 
 
