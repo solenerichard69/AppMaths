@@ -54,8 +54,10 @@
         android:layout_marginBottom="80dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/bclav2"
+        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.475"
         app:srcCompat="@drawable/logo_nuageg" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
