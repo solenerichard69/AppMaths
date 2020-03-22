@@ -23,6 +23,7 @@ public class Add1 extends AppCompatActivity {
     Integer triche=0;
     TextView chrono; // déclaration du textview chrono présent dans layout
     private Button backbta1;
+    Button ok;
 
    // la méthode onCreate() est appelée à la création de l'activité
     @Override
@@ -103,25 +104,25 @@ public class Add1 extends AppCompatActivity {
         result = a+b; //Calcul du résultat attendu
 
         TextView cpta = (TextView) findViewById(R.id.cpta);
-        cpta.setText(""+cpt+" / 10");
+        cpta.setText(""+cpt+" / 20");
 
 
         //Récupére la valeur d'édit text et la vérifie
-        Button ok = findViewById(R.id.ok);
+        ok = findViewById(R.id.ok);
         ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 EditText remplir = (EditText)findViewById(R.id.remplir);
-                int nb = (int) Integer.parseInt(remplir.getText().toString());
 
-
-                //Pour éviter que lorsqu'on appuie sur OK sans edit text ca crash
-                                if(remplir.getText()==null){
-                    TextView resultat = (TextView) findViewById(R.id.resultat);
-                    resultat.setText("ERREUR, veuillez saisir un nombre");
-                }else
-
+                int nb = 0;
+                TextView resultat = (TextView) findViewById(R.id.resultat);
+                try {
+                    nb = (int) Integer.parseInt(remplir.getText().toString());
+                }
+                catch (Exception e) { // si ca merde car rien saisi oui texte pas un entier
+                    resultat.setText("ERREUR");
+                }
 
                 Verification(result,nb);
                 CalculScore(sucess);
@@ -131,20 +132,16 @@ public class Add1 extends AppCompatActivity {
                 remplir.getText().clear();
 
 
+                //Fonction pour ne pas tricher
+                if(triche ==1){
+                    ok.setClickable(false);
+                }else
+                if(triche==0){
+                    ok.setClickable(true);
+                }
+
             }
         });
-
-
-        //Fonction pour ne pas tricher
-
-                if(triche ==1){
-            ok.setClickable(false);
-        }else
-            if(triche==0){
-                ok.setClickable(true);
-            }
-
-
 
 
         Button suivant = findViewById(R.id.suivant);
@@ -163,7 +160,8 @@ public class Add1 extends AppCompatActivity {
 
                 //Affichage du nbr de questions jouées
                 TextView cpta = (TextView) findViewById(R.id.cpta);
-                cpta.setText(""+cpt+" / 10");
+                cpta.setText(""+cpt+" / 20");
+                ok.setClickable(true);
             }
         });
 
