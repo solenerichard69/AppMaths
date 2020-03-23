@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#B0E0E6"
+    android:background="@drawable/fond_serviette"
     tools:context=".Niveau">
 
 
@@ -17,24 +17,22 @@
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="20dp"
-        android:background="#B0E0E6"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TableRow
-            android:background="#B0E0E6"
-            android:padding="30dp">
+        <TableRow android:padding="5dp">
 
             <Button
                 android:id="@+id/backbt"
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="202dp"
+                android:layout_height="72dp"
                 android:layout_weight="1"
-                android:background="#FFA07A"
-                android:text="Retour" />
+                android:background="@drawable/bouton_back"
+                android:text="Retour"
+                android:typeface="sans" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -49,13 +47,11 @@
                 android:text=" " />
         </TableRow>
 
-        <TableRow
-            android:background="#B0E0E6"
-            android:padding="30dp">
+        <TableRow android:padding="15dp">
 
             <Button
                 android:id="@+id/bn1"
-
+                android:background="@drawable/bouton_or"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -64,6 +60,7 @@
 
             <Button
                 android:id="@+id/bn2"
+                android:background="@drawable/bouton_or"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -71,6 +68,7 @@
 
             <Button
                 android:id="@+id/bn3"
+                android:background="@drawable/bouton_or"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -78,9 +76,7 @@
         </TableRow>
 
 
-        <TableRow
-            android:background="#B0E0E6"
-            android:padding="30dp">
+        <TableRow android:padding="5dp">
 
             <TextView
                 android:layout_width="wrap_content"

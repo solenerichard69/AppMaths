@@ -11,8 +11,11 @@
 
         android:theme="@style/AppTheme">
 
-        <activity android:name=".afficheScore"></activity>
-        <activity android:name=".Sous1" />
+        <activity android:name=".afficheScore"
+            android:screenOrientation="landscape"
+            ></activity>
+        <activity android:name=".Sous1"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".Add1"
             android:screenOrientation="landscape" />
