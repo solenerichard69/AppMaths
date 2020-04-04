@@ -20,16 +20,16 @@ public class afficheScore extends AppCompatActivity {
         if (intent != null){
 
             int vallscore=0;
+            int vallscoremax=0;
             vallscore = intent.getIntExtra("Valeur", 0);
+            vallscoremax = intent.getIntExtra("ValeurScoremax", 0);
             TextView textV = findViewById(R.id.AffS);
-            textV.setText("Votre score est de : "+vallscore+" point(s)");
+            textV.setText("Votre score est de : "+vallscore+" point(s) et le score max est de "+vallscoremax);
 
-            /*Partie de Soso
-            Integer ValScore = intent.getIntExtra("Valeur", 0);
-            TextView textV = findViewById(R.id.AffS);
-            textV.setText("ValScore"); // pb il faudrait enlever "" mais si je le fait ca fait crash
-            */
+
+
         }
+
 
 
         //Rester au niveau 1

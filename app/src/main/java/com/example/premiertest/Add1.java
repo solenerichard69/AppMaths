@@ -3,7 +3,9 @@ package com.example.premiertest;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.os.CountDownTimer;
@@ -23,11 +25,15 @@ public class Add1 extends AppCompatActivity {
     TextView chrono; // déclaration du textview chrono présent dans layout
     private Button backbta1;
     Button ok;
+    Button suivant;
+    Integer pastriche=1;
+    Integer scoremax=0;
 
    // la méthode onCreate() est appelée à la création de l'activité
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
 
         // on associe l'acticité au layout du meme nom
         setContentView(R.layout.activity_add1);
@@ -73,9 +79,12 @@ public class Add1 extends AppCompatActivity {
 
             // on redéfinit la méthode onFinish : que fait-t'on à la fin du compte à rebours?
             public void onFinish(){
+                ScoreMax(score);
                 int ValScore = score;
+                int ValScoremax =scoremax;
                 Intent otherAct =new Intent(getApplicationContext(), afficheScore.class);
                 otherAct.putExtra("Valeur", ValScore);
+                otherAct.putExtra("ValeurScoremax", ValScoremax);
                 startActivity(otherAct);
                 finish();
             }
@@ -94,8 +103,8 @@ public class Add1 extends AppCompatActivity {
         Integer b = 0;
 
 
-        a = 1 + (int) (Math.random() * (100));
-        b = 1 + (int) (Math.random() * (100));
+        a = 1 + (int) (Math.random() * (10));
+        b = 1 + (int) (Math.random() * (10));
 
 
         TextView test = (TextView) findViewById(R.id.test);
@@ -104,6 +113,13 @@ public class Add1 extends AppCompatActivity {
 
         TextView cpta = (TextView) findViewById(R.id.cpta);
         cpta.setText(""+cpt+" / 20");
+
+        /*
+        SharedPreferences meilleurScore = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = meilleurScore.edit();
+        editor.putInt("meilleurScore", scoremax);
+        editor.commit();
+        */
 
 
         //Récupére la valeur d'édit text et la vérifie
@@ -139,18 +155,29 @@ public class Add1 extends AppCompatActivity {
                     ok.setClickable(true);
                 }
 
+
             }
         });
 
 
-        Button suivant = findViewById(R.id.suivant);
+        suivant = findViewById(R.id.suivant);
         suivant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 triche=0;
-                int c = 1 + (int) (Math.random() * (100));
-                int d = 1 + (int) (Math.random() * (100));
+                //Anti triche
+                /*if(pastriche==1){
+                    suivant.setClickable(false);
+                }
+                if(pastriche==0){
+                    suivant.setClickable(true);
+                }
+                */
+
+
+                int c = 1 + (int) (Math.random() * (10));
+                int d = 1 + (int) (Math.random() * (10));
                 TextView test = (TextView) findViewById(R.id.test);
                 test.setText(""+c+" + "+d+" =  ?");
 
@@ -160,7 +187,11 @@ public class Add1 extends AppCompatActivity {
                 //Affichage du nbr de questions jouées
                 TextView cpta = (TextView) findViewById(R.id.cpta);
                 cpta.setText(""+cpt+" / 20");
+                pastriche=1;
                 ok.setClickable(true);
+
+
+
             }
         });
 
@@ -180,16 +211,26 @@ public class Add1 extends AppCompatActivity {
             TextView resultat = (TextView) findViewById(R.id.resultat);
             resultat.setText("Bien joué !!!");
             triche =1;
+            pastriche=0;
+
+
 
         }else
         {
             TextView resultat = (TextView) findViewById(R.id.resultat);
             resultat.setText("Dommage !");
             triche =0;
+            pastriche=1;
 
         }
-
     }
+
+    public void ScoreMax(int scoreencours){
+        if(scoreencours>=scoremax){
+            scoremax=scoreencours;
+        }
+    }
+
 
 }
 
