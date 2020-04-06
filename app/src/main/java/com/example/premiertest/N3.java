@@ -82,7 +82,4 @@ public class N3 extends AppCompatActivity {
             }
         });
     }
-
-
-
 }

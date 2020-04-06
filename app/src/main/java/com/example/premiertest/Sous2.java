@@ -83,7 +83,7 @@ public class Sous2 extends AppCompatActivity {
         do{
             a = 1 + (int) (Math.random() * (50));
             b = 1 + (int) (Math.random() * (50));
-        }while(b>a);
+        }while(b>=a);
 
 
 
@@ -141,7 +141,7 @@ public class Sous2 extends AppCompatActivity {
                 do{
                     c = 1 + (int) (Math.random() * (50));
                     d = 1 + (int) (Math.random() * (50));
-                }while(d>c);
+                }while(d>=c);
 
                 TextView test = (TextView) findViewById(R.id.test);
                 test.setText(""+c+" - "+d+" =  ?");
