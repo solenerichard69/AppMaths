@@ -10,7 +10,6 @@ import android.os.CountDownTimer;
 import android.widget.EditText;
 import android.widget.TextView;
 
-
 public class Mult1 extends AppCompatActivity {
     public int counter = 30; // temps de countdown en secondes
     Integer sucess=0;
@@ -100,13 +99,13 @@ public class Mult1 extends AppCompatActivity {
         Integer b = 0;
 
 
-        a = 1 + (int) (Math.random() * (10));
-        b = 1 + (int) (Math.random() * (10));
+        a = 1 + (int) (Math.random() * (5));
+        b = 1 + (int) (Math.random() * (5));
 
 
         TextView test = (TextView) findViewById(R.id.test);
-        test.setText(""+a+" * "+b+" =  ?");
-        result = a*b; //Calcul du résultat attendu
+        test.setText(""+a+" + "+b+" =  ?");
+        result = a+b; //Calcul du résultat attendu
 
         TextView cpta = (TextView) findViewById(R.id.cpta);
         cpta.setText(""+cpt+" / 20");
@@ -173,12 +172,12 @@ public class Mult1 extends AppCompatActivity {
                 */
 
 
-                int c = 1 + (int) (Math.random() * (10));
-                int d = 1 + (int) (Math.random() * (10));
+                int c = 1 + (int) (Math.random() * (5));
+                int d = 1 + (int) (Math.random() * (5));
                 TextView test = (TextView) findViewById(R.id.test);
-                test.setText(""+c+" * "+d+" =  ?");
+                test.setText(""+c+" + "+d+" =  ?");
 
-                result = c*d; //Calcul du résultat attendu
+                result = c+d; //Calcul du résultat attendu
                 cpt=cpt+1;
 
                 //Affichage du nbr de questions jouées
@@ -195,8 +194,6 @@ public class Mult1 extends AppCompatActivity {
 
 
     }
-
-
     public void CalculScore (int sucess){
         score=+sucess;
     }
@@ -229,5 +226,8 @@ public class Mult1 extends AppCompatActivity {
     }
 
 
-}
+    }
+
+
+
 
