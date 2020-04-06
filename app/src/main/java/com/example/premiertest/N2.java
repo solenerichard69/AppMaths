@@ -48,7 +48,7 @@ public class N2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // CHANGER SOUS1 EN SOUS2
-                Intent otherAct2 =new Intent(getApplicationContext(), Sous1.class);
+                Intent otherAct2 =new Intent(getApplicationContext(), Sous2.class);
                 startActivity(otherAct2);
 
                 finish();
