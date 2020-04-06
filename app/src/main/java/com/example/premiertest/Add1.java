@@ -3,7 +3,9 @@ package com.example.premiertest;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.os.CountDownTimer;
@@ -39,6 +41,14 @@ public class Add1 extends AppCompatActivity {
         - un bouton nommé backbt (pour revenir en arriere )
         ...
          */
+
+        // *********************************//
+        // chargement de l'ancien score"
+        // *********************************//
+
+        SharedPreferences mesprefsEnregistrees = PreferenceManager.getDefaultSharedPreferences(this);
+        scoremax = mesprefsEnregistrees.getInt("meilleurScore", 0);
+
 
         // *********************************//
         // mise en place du bouton "retour"

@@ -7,9 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.Chronometer;
-
-import java.net.CookieManager;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,12 +22,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        this.bclav2= (Button)findViewById(R.id.bclav2);
+        this.bclav2= (Button)findViewById(R.id.bregle);
 
         bclav2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent otherAct =new Intent(getApplicationContext(), clav2.class);
+                Intent otherAct =new Intent(getApplicationContext(), Regle.class);
                 startActivity(otherAct);
                 finish();
             }
