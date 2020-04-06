@@ -7,46 +7,47 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class N1 extends AppCompatActivity {
-    private Button backbtn1;
-    private Button ba1;
-    private Button bs1;
-    private Button bm1;
-    private Button bt1;
-   public static boolean goChrono;
+public class N2 extends AppCompatActivity {
+    private Button backbtn2;
+    private Button ba2;
+    private Button bs2;
+    private Button bm2;
+    private Button bt2;
+    public static boolean goChrono;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_n1);
-        this.backbtn1= (Button)findViewById(R.id.backbt);
+        setContentView(R.layout.activity_n2);
+        this.backbtn2= (Button)findViewById(R.id.backbt);
 
-        backbtn1.setOnClickListener(new View.OnClickListener() {
+        backbtn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent otherAct =new Intent(getApplicationContext(), Niveau.class);
                 startActivity(otherAct);
-               // finish(); (voir Niveau)
+                // finish(); (voir Niveau)
             }
         });
-        this.ba1= (Button)findViewById(R.id.ba1);
+        this.ba2= (Button)findViewById(R.id.ba2);
 
-        ba1.setOnClickListener(new View.OnClickListener() {
+        ba2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent otherAct1 =new Intent(getApplicationContext(), Add1.class);
+                Intent otherAct1 =new Intent(getApplicationContext(), Add2.class);
                 startActivity(otherAct1);
 // finish(); (voir Niveau)
             }
         });
 
 
-        this.bs1= (Button)findViewById(R.id.bs1);
+        this.bs2= (Button)findViewById(R.id.bs2);
 
-        bs1.setOnClickListener(new View.OnClickListener() {
+        bs2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // CHANGER SOUS1 EN SOUS2
                 Intent otherAct2 =new Intent(getApplicationContext(), Sous1.class);
                 startActivity(otherAct2);
 
@@ -55,11 +56,12 @@ public class N1 extends AppCompatActivity {
         });
 
 
-        this.bm1= (Button)findViewById(R.id.bm1);
+        this.bm2= (Button)findViewById(R.id.bm2);
 
-        bm1.setOnClickListener(new View.OnClickListener() {
+        bm2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // CHANGER TOUT1 EN TOUT2
                 Intent otherAct2 =new Intent(getApplicationContext(), Mult1.class);
                 startActivity(otherAct2);
 
@@ -67,11 +69,12 @@ public class N1 extends AppCompatActivity {
             }
         });
 
-        this.bt1= (Button)findViewById(R.id.bt1);
+        this.bt2= (Button)findViewById(R.id.bt2);
 
-        bt1.setOnClickListener(new View.OnClickListener() {
+        bt2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // CHANGER TOUT1 EN TOUT2
                 Intent otherAct2 =new Intent(getApplicationContext(), Tout1.class);
                 startActivity(otherAct2);
 

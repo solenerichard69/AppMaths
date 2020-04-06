@@ -3,14 +3,11 @@ package com.example.premiertest;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.os.CountDownTimer;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
 
@@ -82,7 +79,7 @@ public class Add1 extends AppCompatActivity {
                 ScoreMax(score);
                 int ValScore = score;
                 int ValScoremax =scoremax;
-                Intent otherAct =new Intent(getApplicationContext(), afficheScore.class);
+                Intent otherAct =new Intent(getApplicationContext(), AfficheScore.class);
                 otherAct.putExtra("Valeur", ValScore);
                 otherAct.putExtra("ValeurScoremax", ValScoremax);
                 startActivity(otherAct);

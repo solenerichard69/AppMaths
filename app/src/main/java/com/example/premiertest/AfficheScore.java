@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class afficheScore extends AppCompatActivity {
+public class AfficheScore extends AppCompatActivity {
     private Button rejouer;
     private Button rejouer2;
 

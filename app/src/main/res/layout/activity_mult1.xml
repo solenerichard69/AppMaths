@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fond_sous1"
-    tools:context=".Sous1">
+    tools:context=".Mult1">
 
     <TableLayout
         android:layout_width="match_parent"
@@ -46,11 +45,7 @@
                 android:layout_weight="1"
                 android:text=" " />
 
-            <Button
-                android:id="@+id/suivant"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Calcul Suivant" />
+
 
 
         </TableRow>
@@ -86,22 +81,23 @@
                 android:layout_weight="1"
                 android:text=" " />
 
-            <TextView
-                android:id="@+id/resultat"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text=" " />
+
 
             <TextView
                 android:id="@+id/affichagescore"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
+            <Button
+                android:id="@+id/suivant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Calcul Suivant" />
 
         </TableRow>
 
 
     </TableLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
