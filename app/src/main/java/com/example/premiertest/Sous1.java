@@ -93,8 +93,9 @@ public class Sous1 extends AppCompatActivity {
         test.setText(""+a+" - "+b+" =  ?");
         result = a-b; //Calcul du résultat attendu
 
-        TextView cpta = (TextView) findViewById(R.id.cpta);
-        cpta.setText(""+cpt+" / 20");
+        //enlevé car inutile pyis fait beuguer affichage
+       // TextView cpta = (TextView) findViewById(R.id.cpta);
+       // cpta.setText(""+cpt+" / 20");
 
         //Récupére la valeur d'édit text et la vérifie
         ok = findViewById(R.id.ok);

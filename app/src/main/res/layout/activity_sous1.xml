@@ -21,7 +21,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TableRow android:padding="30dp">
+        <TableRow android:padding="15dp">
 
 
             <Button
@@ -30,7 +30,7 @@
                 android:layout_height="83dp"
                 android:layout_weight="1"
                 android:background="@drawable/bouton_back"
-                android:text="Retour" />
+                 />
 
             <TextView
                 android:id="@+id/test"
@@ -46,23 +46,17 @@
                 android:layout_weight="1"
                 android:text=" " />
 
-            <Button
-                android:id="@+id/suivant"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Calcul Suivant" />
-
 
         </TableRow>
 
-        <TableRow android:padding="30dp">
+        <TableRow android:padding="15dp">
 
 
             <EditText
                 android:id="@+id/remplir"
                 android:layout_width="100dp"
                 android:layout_height="41dp"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:ems="10"
                 android:inputType="number" />
 
@@ -71,20 +65,15 @@
                 android:layout_width="49dp"
                 android:layout_height="44dp"
                 android:layout_weight="1"
-                android:text="@android:string/ok" />
+                android:background="@drawable/bouton_okay" />
 
 
         </TableRow>
 
-        <TableRow android:padding="30dp">
+        <TableRow android:padding="15dp">
 
 
-            <TextView
-                android:id="@+id/cpta"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text=" " />
+
 
             <TextView
                 android:id="@+id/resultat"
@@ -98,6 +87,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
+            <Button
+                android:id="@+id/suivant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bouton_continuer"/>
+
+
 
         </TableRow>
 

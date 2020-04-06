@@ -118,8 +118,9 @@ public class Add1 extends AppCompatActivity {
         test.setText(""+a+" + "+b+" =  ?");
         result = a+b; //Calcul du résultat attendu
 
-        TextView cpta = (TextView) findViewById(R.id.cpta);
-        cpta.setText(""+cpt+" / 20");
+        //cf sous 1 enlever car beugue affichage
+       // TextView cpta = (TextView) findViewById(R.id.cpta);
+        //cpta.setText(""+cpt+" / 20");
 
 
         //Récupére la valeur d'édit text et la vérifie
