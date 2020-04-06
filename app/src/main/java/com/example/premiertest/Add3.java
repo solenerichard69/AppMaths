@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class Sous2 extends AppCompatActivity {
+public class Add3 extends AppCompatActivity {
     public int counter = 30; // temps de countdown en secondes
     Integer sucess=0;
     Integer score=0;
@@ -21,24 +21,49 @@ public class Sous2 extends AppCompatActivity {
     Integer cpt=1;
     Integer triche=0;
     TextView chrono; // déclaration du textview chrono présent dans layout
-    private Button backbts1;
+    private Button backbta1;
     Button ok;
+    Button suivant;
+    Integer pastriche=1;
     Integer scoremax=0;
 
-///Commit
+    // la méthode onCreate() est appelée à la création de l'activité
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sous2);
-        this.backbts1= (Button)findViewById(R.id.backbt);
-        backbts1.setOnClickListener(new View.OnClickListener() {
+
+
+        // on associe l'acticité au layout du meme nom
+        setContentView(R.layout.activity_add3);
+        /* cette activité comporte :
+        - un textview nommé chrono
+        - un bouton nommé backbt (pour revenir en arriere )
+        ...
+         */
+
+        // *********************************//
+        // mise en place du bouton "retour"
+        // *********************************//
+
+        // on lie le bouton backbt avec l'attribut de classe backbta1
+        this.backbta1= (Button)findViewById(R.id.backbt);
+
+        backbta1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {  Intent otherAct =new Intent(getApplicationContext(), N1.class);
-                startActivity(otherAct);
+            public void onClick(View v) { // action effectuée quand on clique sur "back"
+                // on ferme simplement l'activité. Si l'activité appelante  (ici Niveau.class) n'était
+                // pas fermée, on reviendra automatiquement dessus. Elle était en arriere-plan.
                 finish();
             }
         });
 
+        // *********************************//
+        // mise en place du chronometre
+        // *********************************//
+
+        // chrono le textview de l'activite sera utilisé pour afficher le chronometre
+        // On lie chrono l'attribut, avec chrono le textview du layout.
+        // on affichera la valeur du chronometre à l'interieur de chrono
         this.chrono= (TextView) findViewById(R.id.chrono);
 
         // on définit un nouveau compte à rebours : objet CountDownTimer
@@ -71,28 +96,32 @@ public class Sous2 extends AppCompatActivity {
         scoremax = mesprefsEnregistrees.getInt("meilleurScore", 0);
 
         System.out.println("[debug] on charge le score max du tel"+ scoremax);
-
         // on lance le compte a rebours :
 
         monCompteARebours.start();
+
+        // *********************************//
+        // reste du code
+        // *********************************//
 
         //Mise en place de l'affichage du calcul
         Integer a = 0;
         Integer b = 0;
 
-        do{
-            a = 1 + (int) (Math.random() * (50));
-            b = 1 + (int) (Math.random() * (50));
-        }while(b>=a);
 
+        a = 1 + (int) (Math.random() * (100));
+        b = 1 + (int) (Math.random() * (100));
 
 
         TextView test = (TextView) findViewById(R.id.test);
-        test.setText(""+a+" - "+b+" =  ?");
-        result = a-b; //Calcul du résultat attendu
+        test.setText(""+a+" + "+b+" =  ?");
+        result = a+b; //Calcul du résultat attendu
 
         TextView cpta = (TextView) findViewById(R.id.cpta);
         cpta.setText(""+cpt+" / 20");
+
+
+
 
         //Récupére la valeur d'édit text et la vérifie
         ok = findViewById(R.id.ok);
@@ -127,37 +156,51 @@ public class Sous2 extends AppCompatActivity {
                     ok.setClickable(true);
                 }
 
+
             }
         });
 
-        Button suivant = findViewById(R.id.suivant);
+
+        suivant = findViewById(R.id.suivant);
         suivant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 triche=0;
-                int c=0;
-                int d=0;
-                do{
-                    c = 1 + (int) (Math.random() * (50));
-                    d = 1 + (int) (Math.random() * (50));
-                }while(d>=c);
+                //Anti triche
+                /*if(pastriche==1){
+                    suivant.setClickable(false);
+                }
+                if(pastriche==0){
+                    suivant.setClickable(true);
+                }
+                */
 
+
+                int c = 1 + (int) (Math.random() * (100));
+                int d = 1 + (int) (Math.random() * (100));
                 TextView test = (TextView) findViewById(R.id.test);
-                test.setText(""+c+" - "+d+" =  ?");
+                test.setText(""+c+" + "+d+" =  ?");
 
-                result = c-d; //Calcul du résultat attendu
+                result = c+d; //Calcul du résultat attendu
                 cpt=cpt+1;
 
                 //Affichage du nbr de questions jouées
                 TextView cpta = (TextView) findViewById(R.id.cpta);
                 cpta.setText(""+cpt+" / 20");
+                pastriche=1;
                 ok.setClickable(true);
+
+
+
             }
         });
 
 
+
     }
+
+
     public void CalculScore (int sucess){
         score=+sucess;
     }
@@ -169,15 +212,18 @@ public class Sous2 extends AppCompatActivity {
             TextView resultat = (TextView) findViewById(R.id.resultat);
             resultat.setText("Bien joué !!!");
             triche =1;
+            pastriche=0;
+
+
 
         }else
         {
             TextView resultat = (TextView) findViewById(R.id.resultat);
             resultat.setText("Dommage !");
             triche =0;
+            pastriche=1;
 
         }
-
     }
 
     public void ScoreMax(int scoreencours){
@@ -190,9 +236,9 @@ public class Sous2 extends AppCompatActivity {
             SharedPreferences.Editor editor = meilleurScore.edit();
             editor.putInt("meilleurScore", scoremax);
             editor.commit();
-
-
         }
     }
 
+
 }
+

@@ -7,7 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class N2 extends AppCompatActivity {
+public class N3 extends AppCompatActivity {
+
     private Button backbtn2;
     private Button ba2;
     private Button bs2;
@@ -15,11 +16,10 @@ public class N2 extends AppCompatActivity {
     private Button bt2;
     public static boolean goChrono;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_n2);
+        setContentView(R.layout.activity_n3);
         this.backbtn2= (Button)findViewById(R.id.backbt);
 
         backbtn2.setOnClickListener(new View.OnClickListener() {
@@ -35,7 +35,7 @@ public class N2 extends AppCompatActivity {
         ba2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent otherAct1 =new Intent(getApplicationContext(), Add2.class);
+                Intent otherAct1 =new Intent(getApplicationContext(), Add3.class);
                 startActivity(otherAct1);
 // finish(); (voir Niveau)
             }
@@ -48,7 +48,7 @@ public class N2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // CHANGER SOUS1 EN SOUS2
-                Intent otherAct2 =new Intent(getApplicationContext(), Sous2.class);
+                Intent otherAct2 =new Intent(getApplicationContext(), Sous3.class);
                 startActivity(otherAct2);
 
                 finish();
@@ -62,7 +62,7 @@ public class N2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // CHANGER TOUT1 EN TOUT2
-                Intent otherAct2 =new Intent(getApplicationContext(), Mult2.class);
+                Intent otherAct2 =new Intent(getApplicationContext(), Mult3.class);
                 startActivity(otherAct2);
 
                 finish();
@@ -75,15 +75,11 @@ public class N2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // CHANGER TOUT1 EN TOUT2
-                Intent otherAct2 =new Intent(getApplicationContext(), Tout2.class);
+                Intent otherAct2 =new Intent(getApplicationContext(), Tout3.class);
                 startActivity(otherAct2);
 
                 finish();
             }
         });
     }
-
-
-
-
 }

@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class Sous2 extends AppCompatActivity {
+public class Sous3 extends AppCompatActivity {
     public int counter = 30; // temps de countdown en secondes
     Integer sucess=0;
     Integer score=0;
@@ -25,11 +25,11 @@ public class Sous2 extends AppCompatActivity {
     Button ok;
     Integer scoremax=0;
 
-///Commit
+    ///Commit
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sous2);
+        setContentView(R.layout.activity_sous3);
         this.backbts1= (Button)findViewById(R.id.backbt);
         backbts1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,8 +81,8 @@ public class Sous2 extends AppCompatActivity {
         Integer b = 0;
 
         do{
-            a = 1 + (int) (Math.random() * (50));
-            b = 1 + (int) (Math.random() * (50));
+            a = 1 + (int) (Math.random() * (100));
+            b = 1 + (int) (Math.random() * (100));
         }while(b>=a);
 
 
@@ -139,8 +139,8 @@ public class Sous2 extends AppCompatActivity {
                 int c=0;
                 int d=0;
                 do{
-                    c = 1 + (int) (Math.random() * (50));
-                    d = 1 + (int) (Math.random() * (50));
+                    c = 1 + (int) (Math.random() * (100));
+                    d = 1 + (int) (Math.random() * (100));
                 }while(d>=c);
 
                 TextView test = (TextView) findViewById(R.id.test);
