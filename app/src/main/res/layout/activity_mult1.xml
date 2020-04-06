@@ -71,8 +71,7 @@
 
         </TableRow>
 
-        <TableRow android:padding="30dp">
-
+        <TableRow android:padding="15dp">
 
             <TextView
                 android:id="@+id/cpta"
@@ -81,21 +80,26 @@
                 android:layout_weight="1"
                 android:text=" " />
 
-
+            <TextView
+                android:id="@+id/resultat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=" " />
 
             <TextView
                 android:id="@+id/affichagescore"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
+
             <Button
                 android:id="@+id/suivant"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/bouton_continuer"
                 android:text="Calcul Suivant" />
-
         </TableRow>
-
 
     </TableLayout>
 
