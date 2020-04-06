@@ -49,7 +49,7 @@ public class Add1 extends AppCompatActivity {
         SharedPreferences mesprefsEnregistrees = PreferenceManager.getDefaultSharedPreferences(this);
         scoremax = mesprefsEnregistrees.getInt("meilleurScore", 0);
 
-
+        System.out.println("[debug] on charge le score max du tel"+ scoremax);
         // *********************************//
         // mise en place du bouton "retour"
         // *********************************//
@@ -120,13 +120,6 @@ public class Add1 extends AppCompatActivity {
 
         TextView cpta = (TextView) findViewById(R.id.cpta);
         cpta.setText(""+cpt+" / 20");
-
-        /*
-        SharedPreferences meilleurScore = PreferenceManager.getDefaultSharedPreferences(this);
-        SharedPreferences.Editor editor = meilleurScore.edit();
-        editor.putInt("meilleurScore", scoremax);
-        editor.commit();
-        */
 
 
         //Récupére la valeur d'édit text et la vérifie
@@ -235,6 +228,15 @@ public class Add1 extends AppCompatActivity {
     public void ScoreMax(int scoreencours){
         if(scoreencours>=scoremax){
             scoremax=scoreencours;
+
+            System.out.println("[debug] on enregistre le novueau score max du tel"+ scoremax);
+
+            SharedPreferences meilleurScore = PreferenceManager.getDefaultSharedPreferences(this);
+            SharedPreferences.Editor editor = meilleurScore.edit();
+            editor.putInt("meilleurScore", scoremax);
+            editor.commit();
+
+
         }
     }
 
