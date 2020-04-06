@@ -68,8 +68,8 @@ public class Sous1 extends AppCompatActivity {
         Integer b = 0;
 
         do{
-            a = 1 + (int) (Math.random() * (100));
-            b = 1 + (int) (Math.random() * (100));
+            a = 1 + (int) (Math.random() * (15));
+            b = 1 + (int) (Math.random() * (15));
         }while(b>a);
 
 
@@ -126,8 +126,8 @@ public class Sous1 extends AppCompatActivity {
                 int c=0;
                 int d=0;
                 do{
-                    c = 1 + (int) (Math.random() * (100));
-                    d = 1 + (int) (Math.random() * (100));
+                    c = 1 + (int) (Math.random() * (15));
+                    d = 1 + (int) (Math.random() * (15));
                 }while(d>c);
 
                 TextView test = (TextView) findViewById(R.id.test);

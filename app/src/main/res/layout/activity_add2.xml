@@ -74,7 +74,7 @@
                 android:layout_width="7dp"
                 android:layout_height="44dp"
                 android:layout_weight="1"
-                android:background="@drawable/bouton_okay" />
+                android:background="@drawable/bouton_ok" />
         </TableRow>
 
         <TableRow android:padding="15dp">

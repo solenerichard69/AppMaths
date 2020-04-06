@@ -100,8 +100,8 @@ public class Add1 extends AppCompatActivity {
         Integer b = 0;
 
 
-        a = 1 + (int) (Math.random() * (10));
-        b = 1 + (int) (Math.random() * (10));
+        a = 1 + (int) (Math.random() * (15));
+        b = 1 + (int) (Math.random() * (15));
 
 
         TextView test = (TextView) findViewById(R.id.test);
@@ -173,8 +173,8 @@ public class Add1 extends AppCompatActivity {
                 */
 
 
-                int c = 1 + (int) (Math.random() * (10));
-                int d = 1 + (int) (Math.random() * (10));
+                int c = 1 + (int) (Math.random() * (15));
+                int d = 1 + (int) (Math.random() * (15));
                 TextView test = (TextView) findViewById(R.id.test);
                 test.setText(""+c+" + "+d+" =  ?");
 
