@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Mult2">
+    tools:context=".N3">
 
     <TableLayout
         android:layout_width="match_parent"
@@ -15,91 +15,92 @@
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="20dp"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TableRow android:padding="30dp">
-
+        <TableRow android:padding="5dp">
 
             <Button
                 android:id="@+id/backbt"
-                android:layout_width="144dp"
-                android:layout_height="83dp"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/bouton_back"
                 android:text="Retour" />
 
             <TextView
-                android:id="@+id/test"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/chrono"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text=" " />
 
-
-
-
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=" " />
         </TableRow>
 
-        <TableRow android:padding="30dp">
-
-
-            <EditText
-                android:id="@+id/remplir"
-                android:layout_width="100dp"
-                android:layout_height="41dp"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="number" />
+        <TableRow android:padding="5dp">
 
             <Button
-                android:id="@+id/ok"
-                android:layout_width="49dp"
-                android:layout_height="44dp"
-                android:layout_weight="1"
-                android:text="@android:string/ok" />
-
-
-        </TableRow>
-
-        <TableRow android:padding="15dp">
-
-            <TextView
-                android:id="@+id/cpta"
+                android:id="@+id/ba2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="6dp"
                 android:layout_weight="1"
-                android:text=" " />
+                android:background="@drawable/bouton_or"
+                android:text="ADDITION" />
+            //android:onClick="startChronoN1"
 
-            <TextView
-                android:id="@+id/resultat"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text=" " />
-
-            <TextView
-                android:id="@+id/affichagescore"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
 
             <Button
-                android:id="@+id/suivant"
+                android:id="@+id/bs2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bouton_continuer"
-                android:text="Calcul Suivant" />
+                android:layout_margin="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/bouton_or"
+                android:text="SOUSTRACTION" />
+
+            <Button
+                android:id="@+id/bm2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/bouton_or"
+                android:text="MULTIPLICATION" />
         </TableRow>
+
+
+        <TableRow android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=" " />
+
+            <Button
+                android:id="@+id/bt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bouton_or"
+                android:text="TOUT" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=" " />
+        </TableRow>
+
 
     </TableLayout>
 

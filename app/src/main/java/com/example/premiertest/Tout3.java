@@ -1,5 +1,5 @@
 package com.example.premiertest;
-import androidx.annotation.Nullable;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,7 +12,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class Mult2 extends AppCompatActivity {
+public class Tout3 extends AppCompatActivity {
+
     public int counter = 30; // temps de countdown en secondes
     Integer sucess=0;
     Integer score=0;
@@ -34,7 +35,7 @@ public class Mult2 extends AppCompatActivity {
 
 
         // on associe l'acticité au layout du meme nom
-        setContentView(R.layout.activity_mult2);
+        setContentView(R.layout.activity_tout3);
         /* cette activité comporte :
         - un textview nommé chrono
         - un bouton nommé backbt (pour revenir en arriere )
@@ -50,9 +51,8 @@ public class Mult2 extends AppCompatActivity {
 
         backbta1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { // action effectuée quand on clique sur "back"
-                // on ferme simplement l'activité. Si l'activité appelante  (ici Niveau.class) n'était
-                // pas fermée, on reviendra automatiquement dessus. Elle était en arriere-plan.
+            public void onClick(View v) {  Intent otherAct =new Intent(getApplicationContext(), N1.class);
+                startActivity(otherAct);
                 finish();
             }
         });
@@ -107,19 +107,41 @@ public class Mult2 extends AppCompatActivity {
         //Mise en place de l'affichage du calcul
         Integer a = 0;
         Integer b = 0;
+        Integer e = 0;
+
+        e = 1 + (int) (Math.random() * (3));
+        do{
+            a = 1 + (int) (Math.random() * (100));
+            b = 1 + (int) (Math.random() * (100));
+        }while(b>a);
 
 
-        a = 1 + (int) (Math.random() * (10));
-        b = 1 + (int) (Math.random() * (10));
 
-
-        TextView test = (TextView) findViewById(R.id.test);
-        test.setText(""+a+" * "+b+" =  ?");
-        result = a*b; //Calcul du résultat attendu
+        if(e==1){
+            TextView test = (TextView) findViewById(R.id.test);
+            test.setText(""+a+" + "+b+" =  ?");
+            result = a+b; //Calcul du résultat attendu
+        }else
+        if(e==2){
+            TextView test = (TextView) findViewById(R.id.test);
+            test.setText(""+a+" - "+b+" =  ?");
+            result = a-b; //Calcul du résultat attendu
+        }else
+        if(e==3){
+            TextView test = (TextView) findViewById(R.id.test);
+            test.setText(""+a+" * "+b+" =  ?");
+            result = a*b; //Calcul du résultat attendu
+        }
 
         TextView cpta = (TextView) findViewById(R.id.cpta);
         cpta.setText(""+cpt+" / 20");
 
+        /*
+        SharedPreferences meilleurScore = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = meilleurScore.edit();
+        editor.putInt("meilleurScore", scoremax);
+        editor.commit();
+        */
 
 
         //Récupére la valeur d'édit text et la vérifie
@@ -174,14 +196,33 @@ public class Mult2 extends AppCompatActivity {
                     suivant.setClickable(true);
                 }
                 */
+                int f=0;
+                int g=0;
+                int h=0;
+
+                f = 1 + (int) (Math.random() * (3));
+                do{
+                    g = 1 + (int) (Math.random() * (100));
+                    h = 1 + (int) (Math.random() * (100));
+                }while(h>g);
 
 
-                int c = 1 + (int) (Math.random() * (10));
-                int d = 1 + (int) (Math.random() * (10));
-                TextView test = (TextView) findViewById(R.id.test);
-                test.setText(""+c+" * "+d+" =  ?");
+                if(f==1){
+                    TextView test = (TextView) findViewById(R.id.test);
+                    test.setText(""+g+" + "+h+" =  ?");
+                    result = g+h; //Calcul du résultat attendu
+                }else
+                if(f==2){
+                    TextView test = (TextView) findViewById(R.id.test);
+                    test.setText(""+g+" - "+h+" =  ?");
+                    result = g-h; //Calcul du résultat attendu
+                }else
+                if(f==3){
+                    TextView test = (TextView) findViewById(R.id.test);
+                    test.setText(""+g+" * "+h+" =  ?");
+                    result = g*h; //Calcul du résultat attendu
+                }
 
-                result = c*d; //Calcul du résultat attendu
                 cpt=cpt+1;
 
                 //Affichage du nbr de questions jouées
@@ -195,8 +236,7 @@ public class Mult2 extends AppCompatActivity {
             }
         });
 
-
-}
+    }
     public void CalculScore (int sucess){
         score=+sucess;
     }

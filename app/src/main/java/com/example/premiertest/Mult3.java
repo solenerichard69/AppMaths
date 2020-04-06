@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class Mult2 extends AppCompatActivity {
+public class Mult3 extends AppCompatActivity {
     public int counter = 30; // temps de countdown en secondes
     Integer sucess=0;
     Integer score=0;
@@ -34,7 +34,7 @@ public class Mult2 extends AppCompatActivity {
 
 
         // on associe l'acticité au layout du meme nom
-        setContentView(R.layout.activity_mult2);
+        setContentView(R.layout.activity_mult3);
         /* cette activité comporte :
         - un textview nommé chrono
         - un bouton nommé backbt (pour revenir en arriere )
@@ -109,8 +109,8 @@ public class Mult2 extends AppCompatActivity {
         Integer b = 0;
 
 
-        a = 1 + (int) (Math.random() * (10));
-        b = 1 + (int) (Math.random() * (10));
+        a = 1 + (int) (Math.random() * (20));
+        b = 1 + (int) (Math.random() * (20));
 
 
         TextView test = (TextView) findViewById(R.id.test);
@@ -176,8 +176,8 @@ public class Mult2 extends AppCompatActivity {
                 */
 
 
-                int c = 1 + (int) (Math.random() * (10));
-                int d = 1 + (int) (Math.random() * (10));
+                int c = 1 + (int) (Math.random() * (20));
+                int d = 1 + (int) (Math.random() * (20));
                 TextView test = (TextView) findViewById(R.id.test);
                 test.setText(""+c+" * "+d+" =  ?");
 
@@ -196,7 +196,7 @@ public class Mult2 extends AppCompatActivity {
         });
 
 
-}
+    }
     public void CalculScore (int sucess){
         score=+sucess;
     }
@@ -235,3 +235,4 @@ public class Mult2 extends AppCompatActivity {
         }
     }
 }
+

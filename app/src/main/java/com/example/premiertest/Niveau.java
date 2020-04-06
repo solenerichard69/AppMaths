@@ -11,6 +11,7 @@ public class Niveau extends AppCompatActivity {
 
     private Button bn1;
     private Button bn2;
+    private Button bn3;
     private Button backbtn;
 
     @Override
@@ -37,6 +38,19 @@ public class Niveau extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent otherAct =new Intent(getApplicationContext(), N2.class);
+                startActivity(otherAct);
+                // finish();
+                // j'enleve le finish ici. Tout simplement car c'est mieux : on laisse
+                // l'activité en arriere plan, comme ca si on ferme l'activité  N1, on revient a Niveau auto
+            }
+        });
+
+        this.bn3= (Button)findViewById(R.id.bn3);
+
+        bn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent otherAct =new Intent(getApplicationContext(), N3.class);
                 startActivity(otherAct);
                 // finish();
                 // j'enleve le finish ici. Tout simplement car c'est mieux : on laisse

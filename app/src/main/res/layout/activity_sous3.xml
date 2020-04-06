@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Mult2">
+    tools:context=".Sous3">
 
     <TableLayout
         android:layout_width="match_parent"
@@ -45,7 +45,11 @@
                 android:layout_weight="1"
                 android:text=" " />
 
-
+            <Button
+                android:id="@+id/suivant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Calcul Suivant" />
 
 
         </TableRow>
@@ -71,7 +75,8 @@
 
         </TableRow>
 
-        <TableRow android:padding="15dp">
+        <TableRow android:padding="30dp">
+
 
             <TextView
                 android:id="@+id/cpta"
@@ -93,14 +98,10 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
 
-            <Button
-                android:id="@+id/suivant"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bouton_continuer"
-                android:text="Calcul Suivant" />
         </TableRow>
 
+
     </TableLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
