@@ -54,13 +54,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rejouer" />
 
-    <TextView
-        android:id="@+id/Affsm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="317dp"
-        android:layout_marginLeft="317dp"
-        android:layout_marginBottom="23dp"
-        app:layout_constraintBottom_toTopOf="@+id/rejouer"
-        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

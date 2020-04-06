@@ -28,9 +28,9 @@
                 android:id="@+id/backbt"
                 android:layout_width="144dp"
                 android:layout_height="83dp"
-
+                android:layout_weight="1"
                 android:background="@drawable/bouton_back"
-                 />
+                android:text="Retour" />
 
             <TextView
                 android:id="@+id/test"
@@ -44,7 +44,7 @@
                 android:id="@+id/chrono"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
+                android:layout_weight="1"
                 android:text=" " />
 
 
@@ -55,7 +55,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="10"
+                android:layout_weight="1"
                 android:text=" " />
 
 
@@ -63,20 +63,26 @@
                 android:id="@+id/remplir"
                 android:layout_width="100dp"
                 android:layout_height="41dp"
-                android:layout_weight="10"
+                android:layout_weight="1"
                 android:ems="10"
                 android:inputType="number" />
 
             <Button
                 android:id="@+id/ok"
-                android:layout_width="173dp"
-                android:layout_height="82dp"
-
-                android:background="@drawable/bouton_okay" />
+                android:layout_width="7dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:background="@drawable/bouton_ok" />
         </TableRow>
 
         <TableRow android:padding="15dp">
 
+            <TextView
+                android:id="@+id/cpta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=" " />
 
             <TextView
                 android:id="@+id/resultat"
@@ -87,18 +93,16 @@
 
             <TextView
                 android:id="@+id/affichagescore"
-                android:layout_width="101dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
 
             <Button
                 android:id="@+id/suivant"
                 android:layout_width="wrap_content"
-                android:layout_height="71dp"
-
+                android:layout_height="wrap_content"
                 android:background="@drawable/bouton_continuer"
-
-                />
+                android:text="Calcul Suivant" />
         </TableRow>
 
 

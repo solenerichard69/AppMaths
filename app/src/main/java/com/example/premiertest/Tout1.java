@@ -97,15 +97,31 @@ public class Tout1 extends AppCompatActivity {
         //Mise en place de l'affichage du calcul
         Integer a = 0;
         Integer b = 0;
+        Integer e = 0;
+
+        e = 1 + (int) (Math.random() * (3));
+        do{
+            a = 1 + (int) (Math.random() * (15));
+            b = 1 + (int) (Math.random() * (15));
+        }while(b>a);
 
 
-        a = 1 + (int) (Math.random() * (10));
-        b = 1 + (int) (Math.random() * (10));
 
-
-        TextView test = (TextView) findViewById(R.id.test);
-        test.setText(""+a+" + "+b+" =  ?");
-        result = a+b; //Calcul du résultat attendu
+        if(e==1){
+            TextView test = (TextView) findViewById(R.id.test);
+            test.setText(""+a+" + "+b+" =  ?");
+            result = a+b; //Calcul du résultat attendu
+        }else
+        if(e==2){
+            TextView test = (TextView) findViewById(R.id.test);
+            test.setText(""+a+" - "+b+" =  ?");
+            result = a-b; //Calcul du résultat attendu
+        }else
+        if(e==3){
+            TextView test = (TextView) findViewById(R.id.test);
+            test.setText(""+a+" * "+b+" =  ?");
+            result = a*b; //Calcul du résultat attendu
+        }
 
         TextView cpta = (TextView) findViewById(R.id.cpta);
         cpta.setText(""+cpt+" / 20");
@@ -170,14 +186,34 @@ public class Tout1 extends AppCompatActivity {
                     suivant.setClickable(true);
                 }
                 */
+                int f=0;
+                int g=0;
+                int h=0;
+
+                f = 1 + (int) (Math.random() * (3));
+                do{
+                    g = 1 + (int) (Math.random() * (15));
+                    h = 1 + (int) (Math.random() * (15));
+                }while(h>g);
 
 
-                int c = 1 + (int) (Math.random() * (10));
-                int d = 1 + (int) (Math.random() * (10));
-                TextView test = (TextView) findViewById(R.id.test);
-                test.setText(""+c+" + "+d+" =  ?");
 
-                result = c+d; //Calcul du résultat attendu
+                if(f==1){
+                    TextView test = (TextView) findViewById(R.id.test);
+                    test.setText(""+g+" + "+h+" =  ?");
+                    result = g+h; //Calcul du résultat attendu
+                }else
+                if(f==2){
+                    TextView test = (TextView) findViewById(R.id.test);
+                    test.setText(""+g+" - "+h+" =  ?");
+                    result = g-h; //Calcul du résultat attendu
+                }else
+                if(f==3){
+                    TextView test = (TextView) findViewById(R.id.test);
+                    test.setText(""+g+" * "+h+" =  ?");
+                    result = g*h; //Calcul du résultat attendu
+                }
+
                 cpt=cpt+1;
 
                 //Affichage du nbr de questions jouées
