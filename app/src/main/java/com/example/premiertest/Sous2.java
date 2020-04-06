@@ -25,7 +25,7 @@ public class Sous2 extends AppCompatActivity {
     Button ok;
     Integer scoremax=0;
 
-
+///Commit
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
