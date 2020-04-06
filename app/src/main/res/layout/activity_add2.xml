@@ -28,7 +28,7 @@
                 android:layout_height="83dp"
                 android:layout_weight="1"
                 android:background="@drawable/bouton_back"
-                android:text="Retour" />
+                />
 
             <TextView
                 android:id="@+id/test"
@@ -74,7 +74,7 @@
                 android:layout_width="7dp"
                 android:layout_height="44dp"
                 android:layout_weight="1"
-                android:background="@drawable/bouton_ok" />
+                android:background="@drawable/bouton_okay" />
         </TableRow>
 
         <TableRow android:padding="15dp">
