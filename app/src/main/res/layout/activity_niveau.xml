@@ -31,7 +31,7 @@
                 android:layout_height="72dp"
                 android:layout_weight="1"
                 android:background="@drawable/bouton_back"
-                android:text="Retour"
+
                 android:typeface="sans" />
 
             <TextView

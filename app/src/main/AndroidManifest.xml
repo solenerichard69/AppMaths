@@ -32,7 +32,7 @@
             android:name=".Niveau"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".clav2"
+            android:name=".Regle"
             android:screenOrientation="landscape" />
         <activity
             android:name=".MainActivity"

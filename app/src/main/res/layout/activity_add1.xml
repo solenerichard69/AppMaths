@@ -30,7 +30,7 @@
                 android:layout_height="83dp"
 
                 android:background="@drawable/bouton_back"
-                android:text="Retour" />
+                 />
 
             <TextView
                 android:id="@+id/test"
@@ -69,8 +69,8 @@
 
             <Button
                 android:id="@+id/ok"
-                android:layout_width="171dp"
-                android:layout_height="71dp"
+                android:layout_width="173dp"
+                android:layout_height="82dp"
 
                 android:background="@drawable/bouton_okay" />
         </TableRow>
