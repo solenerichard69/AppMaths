@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fond_plage_simple"
     tools:context=".Tout1">
+
 
     <TableLayout
         android:layout_width="match_parent"
@@ -18,43 +20,47 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_centerHorizontal="true" >
 
-        <TableRow android:padding="30dp">
-
+        <TableRow android:padding="15dp">
 
             <Button
                 android:id="@+id/backbt"
-                android:layout_width="144dp"
-                android:layout_height="83dp"
-                android:layout_weight="1"
-                android:background="@drawable/bouton_back"
-                android:text="Retour" />
+                android:layout_width="168dp"
+                android:layout_height="wrap_content"
+
+                android:background="@drawable/bouton_back" />
 
             <TextView
                 android:id="@+id/test"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="20sp" />
+                android:layout_width="505dp"
+                android:layout_height="88dp"
+                android:layout_weight="6"
+
+                android:textSize="30sp" />
+
 
             <TextView
                 android:id="@+id/chrono"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="150dp"
+                android:layout_height="57dp"
                 android:layout_weight="1"
-                android:text=" " />
-
-            <Button
-                android:id="@+id/suivant"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Calcul Suivant" />
+                android:background="@drawable/clock"
+                />
 
 
         </TableRow>
 
-        <TableRow android:padding="30dp">
+        <TableRow android:padding="15dp">
+
+            <TextView
+                android:id="@+id/txt"
+                android:layout_width="100dp"
+                android:layout_height="41dp"
+                android:layout_weight="1"
+                />
+
 
 
             <EditText
@@ -67,30 +73,22 @@
 
             <Button
                 android:id="@+id/ok"
-                android:layout_width="49dp"
-                android:layout_height="44dp"
-                android:layout_weight="1"
-                android:text="@android:string/ok" />
-
-
-        </TableRow>
-
-        <TableRow android:padding="30dp">
-
-
-            <TextView
-                android:id="@+id/cpta"
-                android:layout_width="wrap_content"
+                android:layout_width="266dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text=" " />
+                android:background="@drawable/bouton_okay" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:padding="15dp">
+
 
             <TextView
                 android:id="@+id/resultat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text=" " />
+                android:layout_weight="1" />
 
             <TextView
                 android:id="@+id/affichagescore"
@@ -98,11 +96,14 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
 
+            <Button
+                android:id="@+id/suivant"
+                android:layout_width="176dp"
+                android:layout_height="68dp"
+                android:background="@drawable/bouton_continuer" />
         </TableRow>
 
 
     </TableLayout>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

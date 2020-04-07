@@ -91,8 +91,8 @@ public class Sous3 extends AppCompatActivity {
         test.setText(""+a+" - "+b+" =  ?");
         result = a-b; //Calcul du résultat attendu
 
-        TextView cpta = (TextView) findViewById(R.id.cpta);
-        cpta.setText(""+cpt+" / 20");
+        //TextView cpta = (TextView) findViewById(R.id.cpta);
+        //cpta.setText(""+cpt+" / 20");
 
         //Récupére la valeur d'édit text et la vérifie
         ok = findViewById(R.id.ok);
@@ -150,8 +150,8 @@ public class Sous3 extends AppCompatActivity {
                 cpt=cpt+1;
 
                 //Affichage du nbr de questions jouées
-                TextView cpta = (TextView) findViewById(R.id.cpta);
-                cpta.setText(""+cpt+" / 20");
+                //TextView cpta = (TextView) findViewById(R.id.cpta);
+                //cpta.setText(""+cpt+" / 20");
                 ok.setClickable(true);
             }
         });

@@ -50,9 +50,8 @@ public class Mult1 extends AppCompatActivity {
 
         backbta1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { // action effectuée quand on clique sur "back"
-                // on ferme simplement l'activité. Si l'activité appelante  (ici Niveau.class) n'était
-                // pas fermée, on reviendra automatiquement dessus. Elle était en arriere-plan.
+            public void onClick(View v) {  Intent otherAct =new Intent(getApplicationContext(), N1.class);
+                startActivity(otherAct);
                 finish();
             }
         });
@@ -117,8 +116,8 @@ public class Mult1 extends AppCompatActivity {
         test.setText(""+a+" * "+b+" =  ?");
         result = a*b; //Calcul du résultat attendu
 
-        TextView cpta = (TextView) findViewById(R.id.cpta);
-        cpta.setText(""+cpt+" / 20");
+        //TextView cpta = (TextView) findViewById(R.id.cpta);
+        //cpta.setText(""+cpt+" / 20");
 
 
 
@@ -185,8 +184,8 @@ public class Mult1 extends AppCompatActivity {
                 cpt=cpt+1;
 
                 //Affichage du nbr de questions jouées
-                TextView cpta = (TextView) findViewById(R.id.cpta);
-                cpta.setText(""+cpt+" / 20");
+                //TextView cpta = (TextView) findViewById(R.id.cpta);
+                //cpta.setText(""+cpt+" / 20");
                 pastriche=1;
                 ok.setClickable(true);
 

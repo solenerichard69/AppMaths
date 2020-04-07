@@ -133,8 +133,8 @@ public class Tout3 extends AppCompatActivity {
             result = a*b; //Calcul du résultat attendu
         }
 
-        TextView cpta = (TextView) findViewById(R.id.cpta);
-        cpta.setText(""+cpt+" / 20");
+        //TextView cpta = (TextView) findViewById(R.id.cpta);
+        //cpta.setText(""+cpt+" / 20");
 
         /*
         SharedPreferences meilleurScore = PreferenceManager.getDefaultSharedPreferences(this);
@@ -226,8 +226,8 @@ public class Tout3 extends AppCompatActivity {
                 cpt=cpt+1;
 
                 //Affichage du nbr de questions jouées
-                TextView cpta = (TextView) findViewById(R.id.cpta);
-                cpta.setText(""+cpt+" / 20");
+                //TextView cpta = (TextView) findViewById(R.id.cpta);
+                //cpta.setText(""+cpt+" / 20");
                 pastriche=1;
                 ok.setClickable(true);
 
