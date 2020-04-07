@@ -119,12 +119,12 @@ public class Tout2 extends AppCompatActivity {
 
         if(e==1){
             TextView test = (TextView) findViewById(R.id.test);
-            test.setText(""+a+" + "+b+" =  ?");
+            test.setText("                         "+a+" + "+b);
             result = a+b; //Calcul du résultat attendu
         }else
         if(e==2){
             TextView test = (TextView) findViewById(R.id.test);
-            test.setText(""+a+" - "+b+" =  ?");
+            test.setText("                         "+a+" - "+b);
             result = a-b; //Calcul du résultat attendu
         }else
         if(e==3){
