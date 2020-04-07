@@ -31,7 +31,7 @@ public class N3 extends AppCompatActivity {
             }
         });
         this.ba2= (Button)findViewById(R.id.ba2);
-
+//
         ba2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
