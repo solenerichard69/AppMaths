@@ -129,7 +129,7 @@ public class Tout3 extends AppCompatActivity {
         }else
         if(e==3){
             TextView test = (TextView) findViewById(R.id.test);
-            test.setText(""+a+" * "+b+" =  ?");
+            test.setText("                         "+a+" * "+b+" =");
             result = a*b; //Calcul du résultat attendu
         }
 
