@@ -26,23 +26,23 @@
 
             <Button
                 android:id="@+id/backbt"
-                android:layout_width="wrap_content"
+                android:layout_width="168dp"
                 android:layout_height="wrap_content"
 
                 android:background="@drawable/bouton_back" />
 
             <TextView
                 android:id="@+id/test"
-                android:layout_width="328dp"
-                android:layout_height="wrap_content"
+                android:layout_width="505dp"
+                android:layout_height="88dp"
                 android:layout_weight="6"
-                android:textSize="35sp" />
+                android:textSize="30sp" />
 
 
             <TextView
                 android:id="@+id/chrono"
-                android:layout_width="223dp"
-                android:layout_height="50dp"
+                android:layout_width="150dp"
+                android:layout_height="57dp"
                 android:layout_weight="1"
                 android:background="@drawable/clock" />
 
@@ -76,15 +76,16 @@
                 android:background="@drawable/bouton_okay" />
         </TableRow>
 
-        <TableRow android:padding="15dp">
+        <TableRow
+            android:layout_width="match_parent"
+            android:padding="15dp">
 
 
             <TextView
                 android:id="@+id/resultat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                 />
+                android:layout_weight="1" />
 
             <TextView
                 android:id="@+id/affichagescore"
@@ -94,8 +95,8 @@
 
             <Button
                 android:id="@+id/suivant"
-                android:layout_width="166dp"
-                android:layout_height="wrap_content"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
                 android:background="@drawable/bouton_continuer" />
         </TableRow>
 

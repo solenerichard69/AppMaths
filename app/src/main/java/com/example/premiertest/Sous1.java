@@ -153,8 +153,8 @@ public class Sous1 extends AppCompatActivity {
                 cpt=cpt+1;
 
                 //Affichage du nbr de questions jouées
-                TextView cpta = (TextView) findViewById(R.id.cpta);
-                cpta.setText(""+cpt+" / 20");
+                //TextView cpta = (TextView) findViewById(R.id.cpta);
+                //cpta.setText(""+cpt+" / 20");
                 ok.setClickable(true);
             }
         });

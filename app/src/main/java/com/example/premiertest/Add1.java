@@ -81,7 +81,7 @@ public class Add1 extends AppCompatActivity {
             // on redéfinit la méthode onTick : que fait-t'on à chaque seconde décrémentée?
             public void onTick (long millisUntilFinish){
                 counter--; // on diminue le temps restant
-                chrono.setText(counter+""); // on met a jour l'affichage sur l'activité
+                chrono.setText("                 "+counter+""); // on met a jour l'affichage sur l'activité
             }
 
             // on redéfinit la méthode onFinish : que fait-t'on à la fin du compte à rebours?
@@ -186,8 +186,8 @@ public class Add1 extends AppCompatActivity {
                 cpt=cpt+1;
 
                 //Affichage du nbr de questions jouées
-                TextView cpta = (TextView) findViewById(R.id.cpta);
-                cpta.setText(""+cpt+" / 20");
+              //  TextView cpta = (TextView) findViewById(R.id.cpta);
+                //cpta.setText(""+cpt+" / 20");
                 pastriche=1;
                 ok.setClickable(true);
 
