@@ -50,7 +50,7 @@
         <TableRow android:padding="5dp">
 
             <Button
-                android:id="@+id/ba3"
+                android:id="@+id/ba2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="6dp"
@@ -61,7 +61,7 @@
 
 
             <Button
-                android:id="@+id/bs3"
+                android:id="@+id/bs2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="6dp"
@@ -70,7 +70,7 @@
                 android:text="SOUSTRACTION" />
 
             <Button
-                android:id="@+id/bm3"
+                android:id="@+id/bm2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="6dp"
@@ -89,7 +89,7 @@
                 android:text=" " />
 
             <Button
-                android:id="@+id/bt3"
+                android:id="@+id/bt2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
