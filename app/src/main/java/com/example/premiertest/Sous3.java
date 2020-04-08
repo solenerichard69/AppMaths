@@ -33,7 +33,7 @@ public class Sous3 extends AppCompatActivity {
         this.backbts1= (Button)findViewById(R.id.backbt);
         backbts1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {  Intent otherAct =new Intent(getApplicationContext(), N1.class);
+            public void onClick(View v) {  Intent otherAct =new Intent(getApplicationContext(), N3.class);
                 startActivity(otherAct);
                 finish();
             }
@@ -55,7 +55,7 @@ public class Sous3 extends AppCompatActivity {
                 ScoreMax(score);
                 int ValScore = score;
                 int ValScoremax =scoremax;
-                Intent otherAct =new Intent(getApplicationContext(), AfficheScore.class);
+                Intent otherAct =new Intent(getApplicationContext(), Affiche_score_N3.class);
                 otherAct.putExtra("Valeur", ValScore);
                 otherAct.putExtra("ValeurScoremax", ValScoremax);
                 startActivity(otherAct);
@@ -68,7 +68,7 @@ public class Sous3 extends AppCompatActivity {
         // *********************************//
 
         SharedPreferences mesprefsEnregistrees = PreferenceManager.getDefaultSharedPreferences(this);
-        scoremax = mesprefsEnregistrees.getInt("meilleurScore", 0);
+        scoremax = mesprefsEnregistrees.getInt("meilleurScore11", 0);
 
         System.out.println("[debug] on charge le score max du tel"+ scoremax);
 
@@ -81,8 +81,8 @@ public class Sous3 extends AppCompatActivity {
         Integer b = 0;
 
         do{
-            a = 1 + (int) (Math.random() * (100));
-            b = 1 + (int) (Math.random() * (100));
+            a = 1 + (int) (Math.random() * (1000));
+            b = 1 + (int) (Math.random() * (1000));
         }while(b>=a);
 
 
@@ -139,8 +139,8 @@ public class Sous3 extends AppCompatActivity {
                 int c=0;
                 int d=0;
                 do{
-                    c = 1 + (int) (Math.random() * (100));
-                    d = 1 + (int) (Math.random() * (100));
+                    c = 1 + (int) (Math.random() * (1000));
+                    d = 1 + (int) (Math.random() * (1000));
                 }while(d>=c);
 
                 TextView test = (TextView) findViewById(R.id.test);
@@ -188,7 +188,7 @@ public class Sous3 extends AppCompatActivity {
 
             SharedPreferences meilleurScore = PreferenceManager.getDefaultSharedPreferences(this);
             SharedPreferences.Editor editor = meilleurScore.edit();
-            editor.putInt("meilleurScore", scoremax);
+            editor.putInt("meilleurScore11", scoremax);
             editor.commit();
 
 

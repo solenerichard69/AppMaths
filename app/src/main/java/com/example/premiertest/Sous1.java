@@ -23,7 +23,7 @@ public class Sous1 extends AppCompatActivity {
     TextView chrono; // déclaration du textview chrono présent dans layout
     private Button backbts1;
     Button ok;
-    Integer scoremax=0;
+    Integer scoremax1=0;
 
 
 
@@ -56,10 +56,10 @@ public class Sous1 extends AppCompatActivity {
             public void onFinish(){
                 ScoreMax(score);
                 int ValScore = score;
-                int ValScoremax =scoremax;
-                Intent otherAct =new Intent(getApplicationContext(), AfficheScore.class);
+                int ValScoremax1 =scoremax1;
+                Intent otherAct =new Intent(getApplicationContext(), Affiche_scoreSous1.class);
                 otherAct.putExtra("Valeur", ValScore);
-                otherAct.putExtra("ValeurScoremax", ValScoremax);
+                otherAct.putExtra("ValeurScoremax1", ValScoremax1);
                 startActivity(otherAct);
                 finish();
             }
@@ -70,9 +70,9 @@ public class Sous1 extends AppCompatActivity {
         // *********************************//
 
         SharedPreferences mesprefsEnregistrees = PreferenceManager.getDefaultSharedPreferences(this);
-        scoremax = mesprefsEnregistrees.getInt("meilleurScore", 0);
+        scoremax1 = mesprefsEnregistrees.getInt("meilleurScore1", 0);
 
-        System.out.println("[debug] on charge le score max du tel"+ scoremax);
+        System.out.println("[debug] on charge le score max du tel"+ scoremax1);
 
         // on lance le compte a rebours :
 
@@ -185,14 +185,14 @@ public class Sous1 extends AppCompatActivity {
     }
 
     public void ScoreMax(int scoreencours){
-        if(scoreencours>=scoremax){
-            scoremax=scoreencours;
+        if(scoreencours>=scoremax1){
+            scoremax1=scoreencours;
 
-            System.out.println("[debug] on enregistre le novueau score max du tel"+ scoremax);
+            System.out.println("[debug] on enregistre le novueau score max du tel"+ scoremax1);
 
             SharedPreferences meilleurScore = PreferenceManager.getDefaultSharedPreferences(this);
             SharedPreferences.Editor editor = meilleurScore.edit();
-            editor.putInt("meilleurScore", scoremax);
+            editor.putInt("meilleurScore1", scoremax1);
             editor.commit();
 
 

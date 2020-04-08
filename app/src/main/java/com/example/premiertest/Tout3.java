@@ -51,7 +51,7 @@ public class Tout3 extends AppCompatActivity {
 
         backbta1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {  Intent otherAct =new Intent(getApplicationContext(), N1.class);
+            public void onClick(View v) {  Intent otherAct =new Intent(getApplicationContext(), N3.class);
                 startActivity(otherAct);
                 finish();
             }
@@ -80,9 +80,9 @@ public class Tout3 extends AppCompatActivity {
                 ScoreMax(score);
                 int ValScore = score;
                 int ValScoremax =scoremax;
-                Intent otherAct =new Intent(getApplicationContext(), AfficheScore.class);
+                Intent otherAct =new Intent(getApplicationContext(), Affiche_score_N3.class);
                 otherAct.putExtra("Valeur", ValScore);
-                otherAct.putExtra("ValeurScoremax", ValScoremax);
+                otherAct.putExtra("ValeurScoremax13", ValScoremax);
                 startActivity(otherAct);
                 finish();
             }
@@ -111,8 +111,8 @@ public class Tout3 extends AppCompatActivity {
 
         e = 1 + (int) (Math.random() * (3));
         do{
-            a = 1 + (int) (Math.random() * (100));
-            b = 1 + (int) (Math.random() * (100));
+            a = 1 + (int) (Math.random() * (1000));
+            b = 1 + (int) (Math.random() * (1000));
         }while(b>a);
 
 
@@ -202,8 +202,8 @@ public class Tout3 extends AppCompatActivity {
 
                 f = 1 + (int) (Math.random() * (3));
                 do{
-                    g = 1 + (int) (Math.random() * (100));
-                    h = 1 + (int) (Math.random() * (100));
+                    g = 1 + (int) (Math.random() * (1000));
+                    h = 1 + (int) (Math.random() * (1000));
                 }while(h>g);
 
 
@@ -270,7 +270,7 @@ public class Tout3 extends AppCompatActivity {
 
             SharedPreferences meilleurScore = PreferenceManager.getDefaultSharedPreferences(this);
             SharedPreferences.Editor editor = meilleurScore.edit();
-            editor.putInt("meilleurScore", scoremax);
+            editor.putInt("meilleurScore13", scoremax);
             editor.commit();
         }
     }

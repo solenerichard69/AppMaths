@@ -80,7 +80,7 @@ public class Tout2 extends AppCompatActivity {
                 ScoreMax(score);
                 int ValScore = score;
                 int ValScoremax =scoremax;
-                Intent otherAct =new Intent(getApplicationContext(), AfficheScore.class);
+                Intent otherAct =new Intent(getApplicationContext(), Affiche_score_N2.class);
                 otherAct.putExtra("Valeur", ValScore);
                 otherAct.putExtra("ValeurScoremax", ValScoremax);
                 startActivity(otherAct);
@@ -93,7 +93,7 @@ public class Tout2 extends AppCompatActivity {
         // *********************************//
 
         SharedPreferences mesprefsEnregistrees = PreferenceManager.getDefaultSharedPreferences(this);
-        scoremax = mesprefsEnregistrees.getInt("meilleurScore", 0);
+        scoremax = mesprefsEnregistrees.getInt("meilleurScore7", 0);
 
         System.out.println("[debug] on charge le score max du tel"+ scoremax);
         // on lance le compte a rebours :
@@ -111,8 +111,8 @@ public class Tout2 extends AppCompatActivity {
 
         e = 1 + (int) (Math.random() * (3));
         do{
-            a = 1 + (int) (Math.random() * (20));
-            b = 1 + (int) (Math.random() * (20));
+            a = 1 + (int) (Math.random() * (30));
+            b = 1 + (int) (Math.random() * (30));
         }while(b>a);
 
 
@@ -202,8 +202,8 @@ public class Tout2 extends AppCompatActivity {
 
                 f = 1 + (int) (Math.random() * (3));
                 do{
-                    g = 1 + (int) (Math.random() * (20));
-                    h = 1 + (int) (Math.random() * (20));
+                    g = 1 + (int) (Math.random() * (30));
+                    h = 1 + (int) (Math.random() * (30));
                 }while(h>g);
                 
 
@@ -270,7 +270,7 @@ public class Tout2 extends AppCompatActivity {
 
             SharedPreferences meilleurScore = PreferenceManager.getDefaultSharedPreferences(this);
             SharedPreferences.Editor editor = meilleurScore.edit();
-            editor.putInt("meilleurScore", scoremax);
+            editor.putInt("meilleurScore7", scoremax);
             editor.commit();
         }
     }

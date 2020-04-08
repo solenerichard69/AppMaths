@@ -55,7 +55,7 @@ public class Sous2 extends AppCompatActivity {
                 ScoreMax(score);
                 int ValScore = score;
                 int ValScoremax =scoremax;
-                Intent otherAct =new Intent(getApplicationContext(), AfficheScore.class);
+                Intent otherAct =new Intent(getApplicationContext(), Affiche_score_N2.class);
                 otherAct.putExtra("Valeur", ValScore);
                 otherAct.putExtra("ValeurScoremax", ValScoremax);
                 startActivity(otherAct);
@@ -68,7 +68,7 @@ public class Sous2 extends AppCompatActivity {
         // *********************************//
 
         SharedPreferences mesprefsEnregistrees = PreferenceManager.getDefaultSharedPreferences(this);
-        scoremax = mesprefsEnregistrees.getInt("meilleurScore", 0);
+        scoremax = mesprefsEnregistrees.getInt("meilleurScore6", 0);
 
         System.out.println("[debug] on charge le score max du tel"+ scoremax);
 
@@ -188,7 +188,7 @@ public class Sous2 extends AppCompatActivity {
 
             SharedPreferences meilleurScore = PreferenceManager.getDefaultSharedPreferences(this);
             SharedPreferences.Editor editor = meilleurScore.edit();
-            editor.putInt("meilleurScore", scoremax);
+            editor.putInt("meilleurScore6", scoremax);
             editor.commit();
 
 

@@ -80,7 +80,7 @@ public class Tout1 extends AppCompatActivity {
                 ScoreMax(score);
                 int ValScore = score;
                 int ValScoremax =scoremax;
-                Intent otherAct =new Intent(getApplicationContext(), AfficheScore.class);
+                Intent otherAct =new Intent(getApplicationContext(), Affiche_score_tout1.class);
                 otherAct.putExtra("Valeur", ValScore);
                 otherAct.putExtra("ValeurScoremax", ValScoremax);
                 startActivity(otherAct);
@@ -93,7 +93,7 @@ public class Tout1 extends AppCompatActivity {
         // *********************************//
 
         SharedPreferences mesprefsEnregistrees = PreferenceManager.getDefaultSharedPreferences(this);
-        scoremax = mesprefsEnregistrees.getInt("meilleurScore", 0);
+        scoremax = mesprefsEnregistrees.getInt("meilleurScore4", 0);
 
         System.out.println("[debug] on charge le score max du tel"+ scoremax);
         // on lance le compte a rebours :
@@ -133,15 +133,8 @@ public class Tout1 extends AppCompatActivity {
             result = a*b; //Calcul du résultat attendu
         }
 
-        //TextView cpta = (TextView) findViewById(R.id.cpta);
-        //cpta.setText(""+cpt+" / 20");
 
-        /*
-        SharedPreferences meilleurScore = PreferenceManager.getDefaultSharedPreferences(this);
-        SharedPreferences.Editor editor = meilleurScore.edit();
-        editor.putInt("meilleurScore", scoremax);
-        editor.commit();
-        */
+
 
 
         //Récupére la valeur d'édit text et la vérifie
@@ -275,7 +268,7 @@ public class Tout1 extends AppCompatActivity {
 
             SharedPreferences meilleurScore = PreferenceManager.getDefaultSharedPreferences(this);
             SharedPreferences.Editor editor = meilleurScore.edit();
-            editor.putInt("meilleurScore", scoremax);
+            editor.putInt("meilleurScore3", scoremax);
             editor.commit();
         }
     }

@@ -80,7 +80,7 @@ public class Add2 extends AppCompatActivity {
                 ScoreMax(score);
                 int ValScore = score;
                 int ValScoremax =scoremax;
-                Intent otherAct =new Intent(getApplicationContext(), AfficheScore.class);
+                Intent otherAct =new Intent(getApplicationContext(), Affiche_score_N2.class);
                 otherAct.putExtra("Valeur", ValScore);
                 otherAct.putExtra("ValeurScoremax", ValScoremax);
                 startActivity(otherAct);
@@ -93,7 +93,7 @@ public class Add2 extends AppCompatActivity {
         // *********************************//
 
         SharedPreferences mesprefsEnregistrees = PreferenceManager.getDefaultSharedPreferences(this);
-        scoremax = mesprefsEnregistrees.getInt("meilleurScore", 0);
+        scoremax = mesprefsEnregistrees.getInt("meilleurScore14", 0);
 
         System.out.println("[debug] on charge le score max du tel"+ scoremax);
         // on lance le compte a rebours :
@@ -109,8 +109,8 @@ public class Add2 extends AppCompatActivity {
         Integer b = 0;
 
 
-        a = 1 + (int) (Math.random() * (50));
-        b = 1 + (int) (Math.random() * (50));
+        a = 1 + (int) (Math.random() * (100));
+        b = 1 + (int) (Math.random() * (100));
 
 
         TextView test = (TextView) findViewById(R.id.test);
@@ -177,8 +177,8 @@ public class Add2 extends AppCompatActivity {
                 */
 
 
-                int c = 1 + (int) (Math.random() * (50));
-                int d = 1 + (int) (Math.random() * (50));
+                int c = 1 + (int) (Math.random() * (100));
+                int d = 1 + (int) (Math.random() * (100));
                 TextView test = (TextView) findViewById(R.id.test);
                 test.setText("                         "+c+" + "+d+" =");
 
@@ -234,7 +234,7 @@ public class Add2 extends AppCompatActivity {
 
             SharedPreferences meilleurScore = PreferenceManager.getDefaultSharedPreferences(this);
             SharedPreferences.Editor editor = meilleurScore.edit();
-            editor.putInt("meilleurScore", scoremax);
+            editor.putInt("meilleurScore14", scoremax);
             editor.commit();
         }
     }
