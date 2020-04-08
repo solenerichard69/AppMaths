@@ -144,7 +144,7 @@ public class Sous2 extends AppCompatActivity {
                 }while(d>=c);
 
                 TextView test = (TextView) findViewById(R.id.test);
-                test.setText(""+c+" - "+d+" =  ?");
+                test.setText("                         "+c+" - "+d+" =");
 
                 result = c-d; //Calcul du résultat attendu
                 cpt=cpt+1;

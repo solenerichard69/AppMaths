@@ -45,5 +45,25 @@
         android:orientation="vertical"
         app:layout_constraintGuide_begin="20dp" />
 
+    <ToggleButton
+        android:id="@+id/cutson"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="570dp"
+        android:layout_marginLeft="570dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="73dp"
+        android:layout_marginRight="73dp"
+        android:layout_marginBottom="267dp"
+        android:onClick="onDefaultToggleClick"
+        android:textOn="R"
+        android:textOff="Couper son"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

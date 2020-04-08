@@ -3,10 +3,13 @@ package com.example.premiertest;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.ToggleButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
 
     private Button bclav2;
     private Button goniveau;
+    private MediaPlayer player;
+    private ToggleButton cutson;
 
 
     @Override
@@ -21,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         this.bclav2= (Button)findViewById(R.id.bregle);
 
@@ -44,8 +50,25 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        this.player = MediaPlayer.create(getApplicationContext(), R.raw.son_app);
+       player.start();
+
+        ToggleButton cutson = (ToggleButton) findViewById(R.id.cutson);
+        cutson.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    player.stop();
+                } else {
+                    player.start();
+                }
+            }
+        });
+
 
     }
 
 
+    public void onDefaultToggleClick(View view) {
+
+    }
 }

@@ -119,12 +119,12 @@ public class Tout3 extends AppCompatActivity {
 
         if(e==1){
             TextView test = (TextView) findViewById(R.id.test);
-            test.setText(""+a+" + "+b+" =  ?");
+            test.setText("                         "+a+" + "+b+" =");
             result = a+b; //Calcul du résultat attendu
-        }else
+        }
         if(e==2){
             TextView test = (TextView) findViewById(R.id.test);
-            test.setText(""+a+" - "+b+" =  ?");
+            test.setText("                         "+a+" - "+b+" =");
             result = a-b; //Calcul du résultat attendu
         }else
         if(e==3){
@@ -209,17 +209,17 @@ public class Tout3 extends AppCompatActivity {
 
                 if(f==1){
                     TextView test = (TextView) findViewById(R.id.test);
-                    test.setText(""+g+" + "+h+" =  ?");
+                    test.setText("                         "+g+" + "+h+" =");
                     result = g+h; //Calcul du résultat attendu
                 }else
                 if(f==2){
                     TextView test = (TextView) findViewById(R.id.test);
-                    test.setText(""+g+" - "+h+" =  ?");
+                    test.setText("                         "+g+" - "+h+" =");
                     result = g-h; //Calcul du résultat attendu
                 }else
                 if(f==3){
                     TextView test = (TextView) findViewById(R.id.test);
-                    test.setText(""+g+" * "+h+" =  ?");
+                    test.setText("                         "+g+" * "+h+" =");
                     result = g*h; //Calcul du résultat attendu
                 }
 
