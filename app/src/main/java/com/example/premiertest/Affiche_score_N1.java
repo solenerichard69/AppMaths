@@ -8,14 +8,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class AfficheScore extends AppCompatActivity {
+public class Affiche_score_N1 extends AppCompatActivity {
+
     private Button rejouer;
     private Button rejouer2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_affiche_score);
+        setContentView(R.layout.activity_affiche_score__n1);
         Intent intent = getIntent();
         if (intent != null){
 
@@ -37,8 +38,8 @@ public class AfficheScore extends AppCompatActivity {
         rejouer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) { // action effectuée quand on clique sur "back"
-                // on ferme simplement l'activité. Si l'activité appelante n'était
-                // pas fermée, on reviendra automatiquement dessus. Elle était en arriere-plan.
+                Intent otherAct =new Intent(getApplicationContext(), N1.class);
+                startActivity(otherAct);
                 finish();
             }
         });

@@ -9,11 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Affiche_score_N3"></activity>
+        <activity android:name=".Affiche_score_N1"></activity>
+        <activity android:name=".Affiche_score_N3" />
         <activity android:name=".Affiche_score_N2" />
-        <activity android:name=".Affiche_score_tout1" />
-        <activity android:name=".Affiche_score_mult1" />
-        <activity android:name=".Affiche_scoreSous1" />
         <activity
             android:name=".Tout3"
             android:screenOrientation="landscape" />
@@ -49,9 +47,6 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".Mult1"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".AfficheScore"
             android:screenOrientation="landscape" />
         <activity
             android:name=".Sous1"

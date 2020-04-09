@@ -16,7 +16,7 @@ public class Affiche_score_N2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_affiche_score_mult1);
+        setContentView(R.layout.activity_affiche_score__n2);
         Intent intent = getIntent();
         if (intent != null){
 

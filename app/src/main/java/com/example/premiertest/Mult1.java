@@ -79,7 +79,7 @@ public class Mult1 extends AppCompatActivity {
                 ScoreMax(score);
                 int ValScore = score;
                 int ValScoremax =scoremax;
-                Intent otherAct =new Intent(getApplicationContext(), Affiche_score_mult1.class);
+                Intent otherAct =new Intent(getApplicationContext(), Affiche_score_N1.class);
                 otherAct.putExtra("Valeur", ValScore);
                 otherAct.putExtra("ValeurScoremax", ValScoremax);
                 startActivity(otherAct);

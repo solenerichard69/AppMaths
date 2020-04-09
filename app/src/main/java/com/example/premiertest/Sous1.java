@@ -57,7 +57,7 @@ public class Sous1 extends AppCompatActivity {
                 ScoreMax(score);
                 int ValScore = score;
                 int ValScoremax1 =scoremax1;
-                Intent otherAct =new Intent(getApplicationContext(), Affiche_scoreSous1.class);
+                Intent otherAct =new Intent(getApplicationContext(), Affiche_score_N1.class);
                 otherAct.putExtra("Valeur", ValScore);
                 otherAct.putExtra("ValeurScoremax1", ValScoremax1);
                 startActivity(otherAct);
