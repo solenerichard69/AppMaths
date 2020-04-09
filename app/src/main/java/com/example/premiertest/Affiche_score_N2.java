@@ -25,7 +25,7 @@ public class Affiche_score_N2 extends AppCompatActivity {
             vallscore = intent.getIntExtra("Valeur", 0);
             vallscoremax = intent.getIntExtra("ValeurScoremax", 0);
             TextView textV = findViewById(R.id.AffS);
-            textV.setText("Votre score est de : "+vallscore+" point(s) et le score max est de "+vallscoremax);
+            textV.setText("Votre score : "+vallscore+" point(s) \nScore max : "+vallscoremax+" point(s)");
 
 
 

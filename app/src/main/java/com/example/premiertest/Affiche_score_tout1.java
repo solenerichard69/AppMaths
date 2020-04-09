@@ -8,15 +8,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class Affiche_score_N1 extends AppCompatActivity {
-
+public class Affiche_score_tout1 extends AppCompatActivity {
     private Button rejouer;
     private Button rejouer2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_affiche_score__n1);
+        setContentView(R.layout.activity_affiche_score_tout1);
         Intent intent = getIntent();
         if (intent != null){
 

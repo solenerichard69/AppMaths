@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class Affiche_score_N1 extends AppCompatActivity {
+public class Affiche_scoreSous1 extends AppCompatActivity {
 
     private Button rejouer;
     private Button rejouer2;
@@ -16,14 +16,14 @@ public class Affiche_score_N1 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_affiche_score__n1);
+        setContentView(R.layout.activity_affiche_score_sous1);
         Intent intent = getIntent();
         if (intent != null){
 
             int vallscore=0;
             int vallscoremax=0;
             vallscore = intent.getIntExtra("Valeur", 0);
-            vallscoremax = intent.getIntExtra("ValeurScoremax", 0);
+            vallscoremax = intent.getIntExtra("ValeurScoremax1", 0);
             TextView textV = findViewById(R.id.AffS);
             textV.setText("Votre score : "+vallscore+" point(s) \nScore max : "+vallscoremax+" point(s)");
 
@@ -56,3 +56,4 @@ public class Affiche_score_N1 extends AppCompatActivity {
         });
     }
 }
+
