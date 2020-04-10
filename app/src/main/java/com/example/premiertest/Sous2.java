@@ -24,6 +24,7 @@ public class Sous2 extends AppCompatActivity {
     private Button backbts1;
     Button ok;
     Integer scoremax=0;
+    CountDownTimer monCompteARebours;
 
 ///Commit
     @Override
@@ -31,10 +32,11 @@ public class Sous2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sous2);
         this.backbts1= (Button)findViewById(R.id.backbt);
+
         backbts1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {  Intent otherAct =new Intent(getApplicationContext(), N1.class);
-                startActivity(otherAct);
+            public void onClick(View v) {
+                monCompteARebours.cancel();
                 finish();
             }
         });
