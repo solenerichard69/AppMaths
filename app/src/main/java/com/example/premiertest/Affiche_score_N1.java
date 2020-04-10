@@ -27,8 +27,6 @@ public class Affiche_score_N1 extends AppCompatActivity {
             TextView textV = findViewById(R.id.AffS);
             textV.setText("Votre score : "+vallscore+" point(s) \nScore max : "+vallscoremax+" point(s)");
 
-
-
         }
 
 
