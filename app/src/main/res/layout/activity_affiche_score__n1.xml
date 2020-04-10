@@ -7,8 +7,6 @@
     tools:context=".Affiche_score_N1"
     android:background="@drawable/bien">
 
-
-
     <TextView
         android:id="@+id/AffS"
         android:layout_width="wrap_content"

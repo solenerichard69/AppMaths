@@ -111,8 +111,8 @@ public class Tout3 extends AppCompatActivity {
 
         e = 1 + (int) (Math.random() * (3));
         do{
-            a = 1 + (int) (Math.random() * (1000));
-            b = 1 + (int) (Math.random() * (1000));
+            a = 1 + (int) (Math.random() * (100));
+            b = 1 + (int) (Math.random() * (100));
         }while(b>a);
 
 
@@ -202,8 +202,8 @@ public class Tout3 extends AppCompatActivity {
 
                 f = 1 + (int) (Math.random() * (3));
                 do{
-                    g = 1 + (int) (Math.random() * (1000));
-                    h = 1 + (int) (Math.random() * (1000));
+                    g = 1 + (int) (Math.random() * (100));
+                    h = 1 + (int) (Math.random() * (100));
                 }while(h>g);
 
 

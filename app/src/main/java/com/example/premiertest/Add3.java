@@ -109,8 +109,8 @@ public class Add3 extends AppCompatActivity {
         Integer b = 0;
 
 
-            a = 1 + (int) (Math.random() * (1000));
-            b = 1 + (int) (Math.random() * (1000));
+            a = 1 + (int) (Math.random() * (100));
+            b = 1 + (int) (Math.random() * (100));
 
 
 
@@ -182,8 +182,8 @@ public class Add3 extends AppCompatActivity {
                 int c;
                 int d;
 
-                    c = 1 + (int) (Math.random() * (1000));
-                    d = 1 + (int) (Math.random() * (1000));
+                    c = 1 + (int) (Math.random() * (100));
+                    d = 1 + (int) (Math.random() * (100));
 
 
                 TextView test = (TextView) findViewById(R.id.test);

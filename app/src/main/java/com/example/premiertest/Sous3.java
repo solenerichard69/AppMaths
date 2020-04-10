@@ -81,8 +81,8 @@ public class Sous3 extends AppCompatActivity {
         Integer b = 0;
 
         do{
-            a = 1 + (int) (Math.random() * (1000));
-            b = 1 + (int) (Math.random() * (1000));
+            a = 1 + (int) (Math.random() * (100));
+            b = 1 + (int) (Math.random() * (100));
         }while(b>=a);
 
 
@@ -139,8 +139,8 @@ public class Sous3 extends AppCompatActivity {
                 int c=0;
                 int d=0;
                 do{
-                    c = 1 + (int) (Math.random() * (1000));
-                    d = 1 + (int) (Math.random() * (1000));
+                    c = 1 + (int) (Math.random() * (100));
+                    d = 1 + (int) (Math.random() * (100));
                 }while(d>=c);
 
                 TextView test = (TextView) findViewById(R.id.test);
