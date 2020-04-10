@@ -12,6 +12,7 @@ import android.os.CountDownTimer;
 import android.widget.EditText;
 import android.widget.TextView;
 
+
 public class Mult1 extends AppCompatActivity {
     public int counter = 30; // temps de countdown en secondes
     Integer sucess=0;
@@ -21,10 +22,11 @@ public class Mult1 extends AppCompatActivity {
     Integer cpt=1;
     Integer triche=0;
     TextView chrono; // déclaration du textview chrono présent dans layout
-    private Button backbta1;
+    private Button backbtm1;
     Button ok;
     Integer pastriche=1;
     Integer scoremax=0;
+    CountDownTimer monCompteARebours;
 
     // la méthode onCreate() est appelée à la création de l'activité
     @Override
@@ -45,12 +47,11 @@ public class Mult1 extends AppCompatActivity {
         // *********************************//
 
         // on lie le bouton backbt avec l'attribut de classe backbta1
-        this.backbta1= (Button)findViewById(R.id.backbt);
-
-        backbta1.setOnClickListener(new View.OnClickListener() {
+        this.backbtm1= (Button)findViewById(R.id.backbt);
+        backbtm1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {  Intent otherAct =new Intent(getApplicationContext(), N1.class);
-                startActivity(otherAct);
+            public void onClick(View v) {
+                monCompteARebours.cancel();
                 finish();
             }
         });

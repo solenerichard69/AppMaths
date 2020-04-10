@@ -26,6 +26,7 @@ public class Add2 extends AppCompatActivity {
     Integer pastriche=1;
     Integer scoremax=0;
 
+    CountDownTimer monCompteARebours;
     // la méthode onCreate() est appelée à la création de l'activité
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,9 +53,11 @@ public class Add2 extends AppCompatActivity {
             public void onClick(View v) { // action effectuée quand on clique sur "back"
                 // on ferme simplement l'activité. Si l'activité appelante  (ici Niveau.class) n'était
                 // pas fermée, on reviendra automatiquement dessus. Elle était en arriere-plan.
+                monCompteARebours.cancel();
                 finish();
             }
         });
+
 
         // *********************************//
         // mise en place du chronometre

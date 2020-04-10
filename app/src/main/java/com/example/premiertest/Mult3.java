@@ -21,10 +21,11 @@ public class Mult3 extends AppCompatActivity {
     Integer cpt=1;
     Integer triche=0;
     TextView chrono; // déclaration du textview chrono présent dans layout
-    private Button backbta1;
+    private Button backbtm3;
     Button ok;
     Integer pastriche=1;
     Integer scoremax=0;
+    CountDownTimer monCompteARebours;
 
     // la méthode onCreate() est appelée à la création de l'activité
     @Override
@@ -45,13 +46,11 @@ public class Mult3 extends AppCompatActivity {
         // *********************************//
 
         // on lie le bouton backbt avec l'attribut de classe backbta1
-        this.backbta1= (Button)findViewById(R.id.backbt);
-
-        backbta1.setOnClickListener(new View.OnClickListener() {
+        this.backbtm3= (Button)findViewById(R.id.backbt);
+        backbtm3.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { // action effectuée quand on clique sur "back"
-                // on ferme simplement l'activité. Si l'activité appelante  (ici Niveau.class) n'était
-                // pas fermée, on reviendra automatiquement dessus. Elle était en arriere-plan.
+            public void onClick(View v) {
+                monCompteARebours.cancel();
                 finish();
             }
         });

@@ -21,20 +21,21 @@ public class Sous3 extends AppCompatActivity {
     Integer cpt=1;
     Integer triche=0;
     TextView chrono; // déclaration du textview chrono présent dans layout
-    private Button backbts1;
+    private Button backbts3;
     Button ok;
     Integer scoremax=0;
+    CountDownTimer monCompteARebours;
 
     ///Commit
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sous3);
-        this.backbts1= (Button)findViewById(R.id.backbt);
-        backbts1.setOnClickListener(new View.OnClickListener() {
+        this.backbts3= (Button)findViewById(R.id.backbt);
+        backbts3.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {  Intent otherAct =new Intent(getApplicationContext(), N3.class);
-                startActivity(otherAct);
+            public void onClick(View v) {
+                monCompteARebours.cancel();
                 finish();
             }
         });
