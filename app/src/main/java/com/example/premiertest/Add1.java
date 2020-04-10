@@ -141,9 +141,22 @@ public class Add1 extends AppCompatActivity {
                 catch (Exception e) { // si ca merde car rien saisi oui texte pas un entier
                     resultat.setText("ERREUR");
                 }
-
-                Verification(result,nb);
+                boolean resultoperation = Verification(result,nb);
                 CalculScore(sucess);
+
+
+                if (resultoperation == true) {
+
+                    // generation d'une nouvelle ligne
+                    int c = 1 + (int) (Math.random() * (15));
+                    int d = 1 + (int) (Math.random() * (15));
+                    TextView test = (TextView) findViewById(R.id.test);
+                    test.setText("                         "+c+" + "+d+" =");
+
+                    result = c+d; //Calcul du résultat attendu
+                    cpt=cpt+1;
+
+                }
 
                 TextView affichagescore = (TextView) findViewById(R.id.affichagescore);
                 affichagescore.setText("Score : "+score);
@@ -207,7 +220,7 @@ public class Add1 extends AppCompatActivity {
         score=+sucess;
     }
 
-    public void Verification(int result, int result2){
+    public boolean Verification(int result, int result2){
         if(result==result2){
             sucess++;
 
@@ -226,6 +239,7 @@ public class Add1 extends AppCompatActivity {
             pastriche=1;
 
         }
+        return (result==result2);
     }
 
     public void ScoreMax(int scoreencours){
