@@ -25,9 +25,7 @@ public class N2 extends AppCompatActivity {
         backbtn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent otherAct =new Intent(getApplicationContext(), Niveau.class);
-                startActivity(otherAct);
-                // finish(); (voir Niveau)
+                 finish();
             }
         });
         this.ba2= (Button)findViewById(R.id.ba2);
@@ -37,7 +35,6 @@ public class N2 extends AppCompatActivity {
             public void onClick(View v) {
                 Intent otherAct1 =new Intent(getApplicationContext(), Add2.class);
                 startActivity(otherAct1);
-// finish(); (voir Niveau)
             }
         });
 
@@ -47,11 +44,8 @@ public class N2 extends AppCompatActivity {
         bs2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // CHANGER SOUS1 EN SOUS2
                 Intent otherAct2 =new Intent(getApplicationContext(), Sous2.class);
                 startActivity(otherAct2);
-
-                finish();
             }
         });
 
@@ -64,8 +58,6 @@ public class N2 extends AppCompatActivity {
                 // CHANGER TOUT1 EN TOUT2
                 Intent otherAct2 =new Intent(getApplicationContext(), Mult2.class);
                 startActivity(otherAct2);
-
-                finish();
             }
         });
 
@@ -77,8 +69,6 @@ public class N2 extends AppCompatActivity {
                 // CHANGER TOUT1 EN TOUT2
                 Intent otherAct2 =new Intent(getApplicationContext(), Tout2.class);
                 startActivity(otherAct2);
-
-                finish();
             }
         });
     }

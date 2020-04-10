@@ -63,8 +63,6 @@ public class Niveau extends AppCompatActivity {
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent otherAct =new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(otherAct);
                 finish();
             }
         });

@@ -28,6 +28,7 @@ public class Add1 extends AppCompatActivity {
     Integer pastriche=1;
     Integer scoremax=0;
 
+    CountDownTimer monCompteARebours;
    // la méthode onCreate() est appelée à la création de l'activité
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +63,7 @@ public class Add1 extends AppCompatActivity {
             public void onClick(View v) { // action effectuée quand on clique sur "back"
                 // on ferme simplement l'activité. Si l'activité appelante  (ici Niveau.class) n'était
                 // pas fermée, on reviendra automatiquement dessus. Elle était en arriere-plan.
+                 monCompteARebours.cancel();
                 finish();
             }
         });
@@ -77,7 +79,7 @@ public class Add1 extends AppCompatActivity {
 
         // on définit un nouveau compte à rebours : objet CountDownTimer
         // on lui passe en parametre le nombre de seconde (counter) et le délai entre chaque tic (1s)
-        CountDownTimer monCompteARebours =  new  CountDownTimer(counter*1000, 1000){
+         monCompteARebours =  new  CountDownTimer(counter*1000, 1000){
             // on redéfinit la méthode onTick : que fait-t'on à chaque seconde décrémentée?
             public void onTick (long millisUntilFinish){
                 counter--; // on diminue le temps restant

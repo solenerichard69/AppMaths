@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent otherAct =new Intent(getApplicationContext(), Regle.class);
                 startActivity(otherAct);
-                finish();
             }
         });
 
@@ -46,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent otherAct2 =new Intent(getApplicationContext(), Niveau.class);
                 startActivity(otherAct2);
-                finish();
             }
         });
 

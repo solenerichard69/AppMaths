@@ -25,7 +25,7 @@ public class Sous1 extends AppCompatActivity {
     Button ok;
     Integer scoremax1=0;
 
-
+    CountDownTimer monCompteARebours;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +35,8 @@ public class Sous1 extends AppCompatActivity {
         this.backbts1= (Button)findViewById(R.id.backbt);
         backbts1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {  Intent otherAct =new Intent(getApplicationContext(), N1.class);
-                startActivity(otherAct);
+            public void onClick(View v) {
+                monCompteARebours.cancel();
                 finish();
             }
         });
@@ -45,7 +45,7 @@ public class Sous1 extends AppCompatActivity {
 
         // on définit un nouveau compte à rebours : objet CountDownTimer
         // on lui passe en parametre le nombre de seconde (counter) et le délai entre chaque tic (1s)
-        CountDownTimer monCompteARebours =  new  CountDownTimer(counter*1000, 1000){
+         monCompteARebours =  new  CountDownTimer(counter*1000, 1000){
             // on redéfinit la méthode onTick : que fait-t'on à chaque seconde décrémentée?
             public void onTick (long millisUntilFinish){
                 counter--; // on diminue le temps restant

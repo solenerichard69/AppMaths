@@ -20,8 +20,7 @@ public class Regle extends AppCompatActivity {
 
         backbtr.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {  Intent otherAct =new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(otherAct);
+            public void onClick(View v) {
                 finish();
             }
         });
