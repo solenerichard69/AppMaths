@@ -24,7 +24,6 @@ public class Add1 extends AppCompatActivity {
     TextView chrono; // déclaration du textview chrono présent dans layout
     private Button backbta1;
     Button ok;
-    Button suivant;
     Integer pastriche=1;
     Integer scoremax=0;
 
@@ -155,62 +154,14 @@ public class Add1 extends AppCompatActivity {
 
                     result = c+d; //Calcul du résultat attendu
                     cpt=cpt+1;
-
                 }
 
                 TextView affichagescore = (TextView) findViewById(R.id.affichagescore);
                 affichagescore.setText("Score : "+score);
                 remplir.getText().clear();
 
-
-                //Fonction pour ne pas tricher
-                if(triche ==1){
-                    ok.setClickable(false);
-                }else
-                if(triche==0){
-                    ok.setClickable(true);
-                }
-
-
             }
         });
-
-
-        suivant = findViewById(R.id.suivant);
-        suivant.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                triche=0;
-                //Anti triche
-                /*if(pastriche==1){
-                    suivant.setClickable(false);
-                }
-                if(pastriche==0){
-                    suivant.setClickable(true);
-                }
-                */
-
-
-                int c = 1 + (int) (Math.random() * (15));
-                int d = 1 + (int) (Math.random() * (15));
-                TextView test = (TextView) findViewById(R.id.test);
-                test.setText("                         "+c+" + "+d+" =");
-
-                result = c+d; //Calcul du résultat attendu
-                cpt=cpt+1;
-
-                //Affichage du nbr de questions jouées
-              //  TextView cpta = (TextView) findViewById(R.id.cpta);
-                //cpta.setText(""+cpt+" / 20");
-                pastriche=1;
-                ok.setClickable(true);
-
-
-
-            }
-        });
-
 
 
     }

@@ -59,7 +59,7 @@ public class Sous1 extends AppCompatActivity {
                 int ValScoremax1 =scoremax1;
                 Intent otherAct =new Intent(getApplicationContext(), Affiche_score_N1.class);
                 otherAct.putExtra("Valeur", ValScore);
-                otherAct.putExtra("ValeurScoremax1", ValScoremax1);
+                otherAct.putExtra("ValeurScoremax", ValScoremax1);
                 startActivity(otherAct);
                 finish();
             }
@@ -70,7 +70,7 @@ public class Sous1 extends AppCompatActivity {
         // *********************************//
 
         SharedPreferences mesprefsEnregistrees = PreferenceManager.getDefaultSharedPreferences(this);
-        scoremax1 = mesprefsEnregistrees.getInt("meilleurScore1", 0);
+        scoremax1 = mesprefsEnregistrees.getInt("meilleurScore00", 0);
 
         System.out.println("[debug] on charge le score max du tel"+ scoremax1);
 
@@ -113,51 +113,36 @@ public class Sous1 extends AppCompatActivity {
                 catch (Exception e) { // si ca merde car rien saisi oui texte pas un entier
                     resultat.setText("ERREUR");
                 }
-
-                Verification(result,nb);
+                boolean resultoperation = Verification(result,nb);
                 CalculScore(sucess);
+
+
+                if (resultoperation == true) {
+
+                    // generation d'une nouvelle ligne
+
+                    int c=0;
+                    int d=0;
+                    do{
+                        c = 1 + (int) (Math.random() * (15));
+                        d = 1 + (int) (Math.random() * (15));
+                    }while(d>=c);
+                        TextView test = (TextView) findViewById(R.id.test);
+                        test.setText("                         "+c+" - "+d+" =");
+
+                        result = c-d; //Calcul du résultat attendu
+                        cpt=cpt+1;
+
+
+                }
 
                 TextView affichagescore = (TextView) findViewById(R.id.affichagescore);
                 affichagescore.setText("Score : "+score);
                 remplir.getText().clear();
 
-
-                //Fonction pour ne pas tricher
-                if(triche ==1){
-                    ok.setClickable(false);
-                }else
-                if(triche==0){
-                    ok.setClickable(true);
-                }
-
             }
         });
 
-        Button suivant = findViewById(R.id.suivant);
-        suivant.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                triche=0;
-                int c=0;
-                int d=0;
-                do{
-                    c = 1 + (int) (Math.random() * (15));
-                    d = 1 + (int) (Math.random() * (15));
-                }while(d>=c);
-
-                TextView test = (TextView) findViewById(R.id.test);
-                test.setText("                         "+c+" - "+d+" =");
-
-                result = c-d; //Calcul du résultat attendu
-                cpt=cpt+1;
-
-                //Affichage du nbr de questions jouées
-                //TextView cpta = (TextView) findViewById(R.id.cpta);
-                //cpta.setText(""+cpt+" / 20");
-                ok.setClickable(true);
-            }
-        });
 
 
     }
@@ -166,7 +151,7 @@ public class Sous1 extends AppCompatActivity {
         score=+sucess;
     }
 
-    public void Verification(int result, int result2){
+    public boolean Verification(int result, int result2){
         if(result==result2){
             sucess++;
 
@@ -174,14 +159,18 @@ public class Sous1 extends AppCompatActivity {
             resultat.setText("Bien joué !!!");
             triche =1;
 
+
+
+
         }else
         {
             TextView resultat = (TextView) findViewById(R.id.resultat);
             resultat.setText("Dommage !");
             triche =0;
 
-        }
 
+        }
+        return (result==result2);
     }
 
     public void ScoreMax(int scoreencours){
@@ -192,7 +181,7 @@ public class Sous1 extends AppCompatActivity {
 
             SharedPreferences meilleurScore = PreferenceManager.getDefaultSharedPreferences(this);
             SharedPreferences.Editor editor = meilleurScore.edit();
-            editor.putInt("meilleurScore1", scoremax1);
+            editor.putInt("meilleurScore00", scoremax1);
             editor.commit();
 
 
