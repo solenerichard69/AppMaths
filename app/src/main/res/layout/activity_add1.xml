@@ -47,7 +47,7 @@
                 android:layout_height="57dp"
                 android:layout_weight="1"
                 android:background="@drawable/clock"
-               />
+                android:textSize="24sp" />
 
 
         </TableRow>

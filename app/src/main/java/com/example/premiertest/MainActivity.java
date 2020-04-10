@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ToggleButton;
 
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private MediaPlayer player;
     private ToggleButton cutson;
 
+    boolean musiquelancee = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,11 +53,12 @@ public class MainActivity extends AppCompatActivity {
         this.player = MediaPlayer.create(getApplicationContext(), R.raw.son_app);
        player.start();
 
+
         ToggleButton cutson = (ToggleButton) findViewById(R.id.cutson);
         cutson.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    player.stop();
+                    player.pause();
                 } else {
                     player.start();
                 }
