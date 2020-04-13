@@ -7,7 +7,6 @@
     android:background="@drawable/fond_plage_simple"
     tools:context=".Sous3">
 
-
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -23,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_centerHorizontal="true" >
 
-        <TableRow android:padding="15dp">
+        <TableRow android:padding="10dp">
 
             <Button
                 android:id="@+id/backbt"
@@ -49,9 +48,10 @@
                 android:background="@drawable/clock"
                 android:textSize="24sp" />
 
+
         </TableRow>
 
-        <TableRow android:padding="15dp">
+        <TableRow android:padding="10dp">
 
             <TextView
                 android:id="@+id/txt"
@@ -73,27 +73,31 @@
             <Button
                 android:id="@+id/ok"
                 android:layout_width="266dp"
-                android:layout_height="wrap_content"
+                android:layout_height="96dp"
                 android:layout_weight="1"
                 android:background="@drawable/bouton_okay" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:padding="15dp">
+            android:padding="10dp">
 
-
-            <TextView
-                android:id="@+id/resultat"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
 
             <TextView
                 android:id="@+id/affichagescore"
+
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_height="45dp"
+
+                android:background="#9CFFFFFF"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/txt3"
+                android:layout_width="100dp"
+                android:layout_height="41dp"
+
+                android:textSize="24sp" />
 
         </TableRow>
 

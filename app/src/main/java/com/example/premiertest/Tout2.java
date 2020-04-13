@@ -152,12 +152,12 @@ public class Tout2 extends AppCompatActivity {
                 EditText remplir = (EditText)findViewById(R.id.remplir);
 
                 int nb = 0;
-                TextView resultat = (TextView) findViewById(R.id.resultat);
+                //TextView resultat = (TextView) findViewById(R.id.resultat);
                 try {
                     nb = (int) Integer.parseInt(remplir.getText().toString());
                 }
                 catch (Exception e) { // si ca merde car rien saisi oui texte pas un entier
-                    resultat.setText("ERREUR");
+                    // resultat.setText("ERREUR");
                 }
                 boolean resultoperation = Verification(result,nb);
                 CalculScore(sucess);
@@ -219,13 +219,13 @@ public class Tout2 extends AppCompatActivity {
         if(result==result2){
             sucess++;
 
-            TextView resultat = (TextView) findViewById(R.id.resultat);
-            resultat.setText("Bien joué !!!");
+            //TextView resultat = (TextView) findViewById(R.id.resultat);
+           // resultat.setText("Bien joué !!!");
             triche =1;
         }else
         {
-            TextView resultat = (TextView) findViewById(R.id.resultat);
-            resultat.setText("Dommage !");
+            //TextView resultat = (TextView) findViewById(R.id.resultat);
+            //resultat.setText("Dommage !");
             triche =0;
         }
         return (result==result2);

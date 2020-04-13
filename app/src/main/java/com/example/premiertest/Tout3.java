@@ -218,13 +218,13 @@ public class Tout3 extends AppCompatActivity {
         if(result==result2){
             sucess++;
 
-            TextView resultat = (TextView) findViewById(R.id.resultat);
-            resultat.setText("Bien joué !!!");
+          //  TextView resultat = (TextView) findViewById(R.id.resultat);
+            //resultat.setText("Bien joué !!!");
             triche =1;
         }else
         {
-            TextView resultat = (TextView) findViewById(R.id.resultat);
-            resultat.setText("Dommage !");
+           // TextView resultat = (TextView) findViewById(R.id.resultat);
+            //resultat.setText("Dommage !");
             triche =0;
         }
         return (result==result2);
