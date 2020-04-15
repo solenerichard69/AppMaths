@@ -111,8 +111,8 @@ public class Add2 extends AppCompatActivity {
         Integer b = 0;
 
 
-        a = 1 + (int) (Math.random() * (100));
-        b = 1 + (int) (Math.random() * (100));
+        a = 1 + (int) (Math.random() * (50));
+        b = 1 + (int) (Math.random() * (50));
 
 
         TextView test = (TextView) findViewById(R.id.test);
@@ -148,8 +148,8 @@ public class Add2 extends AppCompatActivity {
                 if (resultoperation == true) {
 
                     // generation d'une nouvelle ligne
-                    int c = 1 + (int) (Math.random() * (100));
-                    int d = 1 + (int) (Math.random() * (100));
+                    int c = 1 + (int) (Math.random() * (50));
+                    int d = 1 + (int) (Math.random() * (50));
                     TextView test = (TextView) findViewById(R.id.test);
                     test.setText("                         "+c+" + "+d+" =");
 
