@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 
@@ -69,7 +70,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void onDefaultToggleClick(View view) {
 
+
+    public void onCustomToggleClick(View view) {
+        Toast.makeText( this, "CustomToggle", Toast.LENGTH_SHORT).show();
     }
 }
