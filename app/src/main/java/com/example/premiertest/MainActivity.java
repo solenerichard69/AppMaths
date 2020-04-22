@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.CompoundButton;
-import android.widget.Toast;
 import android.widget.ToggleButton;
 
 
@@ -17,23 +16,22 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    private Button bclav2;
-    private Button goniveau;
+    private Button regle; // button pour avoir accès aux règles
+    private Button goniveau; // boutton d'accès aux niveaux pour commencer à jouer
     private MediaPlayer player;
-    private ToggleButton cutson;
 
-    boolean musiquelancee = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        requestWindowFeature(Window.FEATURE_NO_TITLE); // permet de supprimer le titre qui peut apparaitre en haut du main
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
 
-        this.bclav2= (Button)findViewById(R.id.bregle);
+        this.regle= (Button)findViewById(R.id.bregle);
 
-        bclav2.setOnClickListener(new View.OnClickListener() {
+        regle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent otherAct =new Intent(getApplicationContext(), Regle.class);
@@ -42,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         this.goniveau= (Button)findViewById(R.id.goniveau);
-// hello
+
         goniveau.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,7 +53,11 @@ public class MainActivity extends AppCompatActivity {
        player.start();
 
 
+
         ToggleButton cutson = (ToggleButton) findViewById(R.id.cutson);
+        cutson.setTextOn("  ");
+        cutson.setTextOff("  ");
+
         cutson.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
@@ -73,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void onCustomToggleClick(View view) {
-        Toast.makeText( this, "CustomToggle", Toast.LENGTH_SHORT).show();
+
+
     }
 }
