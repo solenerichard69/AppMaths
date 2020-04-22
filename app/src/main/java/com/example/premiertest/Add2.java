@@ -47,7 +47,6 @@ public class Add2 extends AppCompatActivity {
 
         // on lie le bouton backbt avec l'attribut de classe backbta1
         this.backbta1= (Button)findViewById(R.id.backbt);
-
         backbta1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) { // action effectuée quand on clique sur "back"
