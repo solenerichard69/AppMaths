@@ -10,19 +10,22 @@ import android.widget.Button;
 
 
 public class Regle extends AppCompatActivity {
-    private Button backbtr;
+    private Button backbtr;//Bouton de retour
+
+    //Cette activité est vitrine : elle permet juste d'afficher les régles du jeu, et de revenir en arriére
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_regle);
-        this.backbtr= (Button)findViewById(R.id.backbt);
 
+        //BOUTON RETOUR\\
+        this.backbtr= (Button)findViewById(R.id.backbt);
         backbtr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
-        });
+        });//Fermeture de l'activité
     }
 }
