@@ -118,17 +118,17 @@ public class Tout3 extends AppCompatActivity {
 
         if(e==1){
             TextView test = (TextView) findViewById(R.id.test);
-            test.setText("                         "+a+" + "+b+" =");
+            test.setText(+a+" + "+b+" =");
             result = a+b; //Calcul du résultat attendu
         }
         if(e==2){
             TextView test = (TextView) findViewById(R.id.test);
-            test.setText("                         "+a+" - "+b+" =");
+            test.setText(+a+" - "+b+" =");
             result = a-b; //Calcul du résultat attendu
         }else
         if(e==3){
             TextView test = (TextView) findViewById(R.id.test);
-            test.setText("                         "+a+" * "+b+" =");
+            test.setText(+a+" * "+b+" =");
             result = a*b; //Calcul du résultat attendu
         }
 
@@ -152,12 +152,12 @@ public class Tout3 extends AppCompatActivity {
                 EditText remplir = (EditText)findViewById(R.id.remplir);
 
                 int nb = 0;
-                TextView resultat = (TextView) findViewById(R.id.resultat);
+                //TextView resultat = (TextView) findViewById(R.id.resultat);
                 try {
                     nb = (int) Integer.parseInt(remplir.getText().toString());
                 }
                 catch (Exception e) { // si ca merde car rien saisi oui texte pas un entier
-                    resultat.setText("ERREUR");
+
                 }
                 boolean resultoperation = Verification(result,nb);
                 CalculScore(sucess);
@@ -180,17 +180,17 @@ public class Tout3 extends AppCompatActivity {
 
                     if(e==1){
                         TextView test = (TextView) findViewById(R.id.test);
-                        test.setText("                         "+c+" + "+d+" =");
+                        test.setText(+c+" + "+d+" =");
                         result = c+d; //Calcul du résultat attendu
                     }
                     if(e==2){
                         TextView test = (TextView) findViewById(R.id.test);
-                        test.setText("                         "+c+" - "+d+" =");
+                        test.setText(+c+" - "+d+" =");
                         result = c-d; //Calcul du résultat attendu
                     }else
                     if(e==3){
                         TextView test = (TextView) findViewById(R.id.test);
-                        test.setText("                         "+c+" * "+d+" =");
+                        test.setText(+c+" * "+d+" =");
                         result = c*d; //Calcul du résultat attendu
                     }
 

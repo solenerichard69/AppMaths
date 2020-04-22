@@ -112,7 +112,7 @@ public class Mult3 extends AppCompatActivity {
 
 
         TextView test = (TextView) findViewById(R.id.test);
-        test.setText("                         "+a+" * "+b+" =");
+        test.setText(+a+" * "+b+" =");
         result = a*b; //Calcul du résultat attendu
 
         //TextView cpta = (TextView) findViewById(R.id.cpta);
@@ -146,7 +146,7 @@ public class Mult3 extends AppCompatActivity {
                     int c = 1 + (int) (Math.random() * (30));
                     int d = 1 + (int) (Math.random() * (30));
                     TextView test = (TextView) findViewById(R.id.test);
-                    test.setText("                         "+c+" * "+d+" =");
+                    test.setText(+c+" * "+d+" =");
 
                     result = c*d; //Calcul du résultat attendu
                     cpt=cpt+1;
