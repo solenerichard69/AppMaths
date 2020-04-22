@@ -78,7 +78,7 @@ public class Add3 extends AppCompatActivity {
 
 
         TextView test = (TextView) findViewById(R.id.test);
-        test.setText("                         "+a+" + "+b+" =");
+        test.setText(+a+" + "+b+" =");
         result = a+b; //Calcul du résultat attendu
 
         //BOUTON OK
@@ -105,7 +105,7 @@ public class Add3 extends AppCompatActivity {
                     int c = 1 + (int) (Math.random() * (100));
                     int d = 1 + (int) (Math.random() * (100));
                     TextView test = (TextView) findViewById(R.id.test);
-                    test.setText("                         "+c+" + "+d+" =");
+                    test.setText(+c+" + "+d+" =");
 
                     result = c+d; //Calcul du résultat attendu
                 }
