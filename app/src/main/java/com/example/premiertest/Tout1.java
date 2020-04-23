@@ -19,12 +19,9 @@ public class Tout1 extends AppCompatActivity {
     Integer score=0;
     Integer result;
     Integer result1;
-    Integer cpt=1;
-    Integer triche=0;
     TextView chrono; // déclaration du textview chrono présent dans layout
     private Button backbtt1;
     Button ok;
-    Integer pastriche=1;
     Integer scoremax=0;
     CountDownTimer monCompteARebours;
 
@@ -36,16 +33,6 @@ public class Tout1 extends AppCompatActivity {
 
         // on associe l'acticité au layout du meme nom
         setContentView(R.layout.activity_tout1);
-        /* cette activité comporte :
-        - un textview nommé chrono
-        - un bouton nommé backbt (pour revenir en arriere )
-        ...
-         */
-
-        // *********************************//
-        // mise en place du bouton "retour"
-        // *********************************//
-
         // on lie le bouton backbt avec l'attribut de classe backbta1
         this.backbtt1= (Button)findViewById(R.id.backbt);
         backbtt1.setOnClickListener(new View.OnClickListener() {
@@ -56,13 +43,6 @@ public class Tout1 extends AppCompatActivity {
             }
         });
 
-        // *********************************//
-        // mise en place du chronometre
-        // *********************************//
-
-        // chrono le textview de l'activite sera utilisé pour afficher le chronometre
-        // On lie chrono l'attribut, avec chrono le textview du layout.
-        // on affichera la valeur du chronometre à l'interieur de chrono
         this.chrono= (TextView) findViewById(R.id.chrono);
 
         // on définit un nouveau compte à rebours : objet CountDownTimer
@@ -87,21 +67,12 @@ public class Tout1 extends AppCompatActivity {
             }
         };
 
-        // *********************************//
-        // chargement de l'ancien score"
-        // *********************************//
-
         SharedPreferences mesprefsEnregistrees = PreferenceManager.getDefaultSharedPreferences(this);
         scoremax = mesprefsEnregistrees.getInt("meilleurScore4", 0);
 
-        System.out.println("[debug] on charge le score max du tel"+ scoremax);
         // on lance le compte a rebours :
 
         monCompteARebours.start();
-
-        // *********************************//
-        // reste du code
-        // *********************************//
 
         //Mise en place de l'affichage du calcul
         Integer a = 0;
@@ -134,9 +105,6 @@ public class Tout1 extends AppCompatActivity {
 
 
 
-
-
-        //Récupére la valeur d'édit text et la vérifie
         ok = findViewById(R.id.ok);
         ok.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -145,12 +113,10 @@ public class Tout1 extends AppCompatActivity {
                 EditText remplir = (EditText)findViewById(R.id.remplir);
 
                 int nb = 0;
-                //TextView resultat = (TextView) findViewById(R.id.resultat);
                 try {
                     nb = (int) Integer.parseInt(remplir.getText().toString());
                 }
-                catch (Exception e) { // si ca merde car rien saisi oui texte pas un entier
-                    // resultat.setText("ERREUR");
+                catch (Exception e) {
                 }
                 boolean resultoperation = Verification(result,nb);
                 CalculScore(sucess);
@@ -163,14 +129,15 @@ public class Tout1 extends AppCompatActivity {
                     int c=0;
                     int d=0;
                     int e=0;
+                    //On établie un chiffre aléatoire entre 1 et 3, ce qui v permettre de décider de l'exercice à réaliser
                     e = 1 + (int) (Math.random() * (3));
                     do{
-                        c = 1 + (int) (Math.random() * (15));
-                        d = 1 + (int) (Math.random() * (15));
+                        c = 1 + (int) (Math.random() * (15));//Génération des nombres correspondant au calcul, aléatoirement entre 1 et 15
+                        d = 1 + (int) (Math.random() * (15));//Génération des nombres correspondant au calcul, aléatoirement entre 1 et 15
                     }while(d>c);
 
 
-
+                    //En fonction de l'exercice tiré au hasard, un calcul différent est affiché
                     if(e==1){
                         TextView test = (TextView) findViewById(R.id.test);
                         test.setText(+c+" + "+d+" =");
@@ -186,10 +153,6 @@ public class Tout1 extends AppCompatActivity {
                         test.setText(+c+" * "+d+" =");
                         result = c*d; //Calcul du résultat attendu
                     }
-
-
-                    cpt=cpt+1;
-
 
                 }
 
@@ -215,15 +178,6 @@ public class Tout1 extends AppCompatActivity {
     public boolean Verification(int result, int result2){
         if(result==result2){
             sucess++;
-
-           // TextView resultat = (TextView) findViewById(R.id.resultat);
-           // resultat.setText("Bien joué !!!");
-            triche =1;
-        }else
-        {
-            //TextView resultat = (TextView) findViewById(R.id.resultat);
-           // resultat.setText("Dommage !");
-            triche =0;
         }
         return (result==result2);
     }
@@ -231,9 +185,6 @@ public class Tout1 extends AppCompatActivity {
     public void ScoreMax(int scoreencours){
         if(scoreencours>=scoremax){
             scoremax=scoreencours;
-
-            System.out.println("[debug] on enregistre le novueau score max du tel"+ scoremax);
-
             SharedPreferences meilleurScore = PreferenceManager.getDefaultSharedPreferences(this);
             SharedPreferences.Editor editor = meilleurScore.edit();
             editor.putInt("meilleurScore3", scoremax);

@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+//Cette page affiche le score du joueur, qui vient de terminer un exercice du Niveau 1
+//Elle affiche également le score maximal atteint pour un exercice en particulier
+
 public class Affiche_score_N1 extends AppCompatActivity {
 
     private Button rejouer;     //Bouton permattant de rejouer directement sur le même niveau

@@ -19,11 +19,9 @@ public class Mult1 extends AppCompatActivity {
     Integer score=0;
     Integer result;
     Integer result1;
-    Integer triche=0;
     TextView chrono; // déclaration du textview chrono présent dans layout
     private Button backbtm1;
     Button ok;
-    Integer pastriche=1;
     Integer scoremax=0;
     CountDownTimer monCompteARebours;
 
@@ -141,19 +139,6 @@ public class Mult1 extends AppCompatActivity {
     public boolean Verification(int result, int result2){
         if(result==result2){
             sucess++;
-
-
-            triche =1;
-            pastriche=0;
-
-
-
-        }else
-        {
-
-            triche =0;
-            pastriche=1;
-
         }
         return (result==result2);
     }

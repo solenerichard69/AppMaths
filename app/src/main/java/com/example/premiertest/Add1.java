@@ -12,6 +12,9 @@ import android.os.CountDownTimer;
 import android.widget.EditText;
 import android.widget.TextView;
 
+//L'application est composée de 12 activités qui constituent les "exercices". Ces activités Java ont toutes la même construction, et sont
+//identiques à l'exception des nombres aléatoires générés, de la forme du calcul (+, - ou *), et de la variable mise en mémoire pour le score max
+//Les commentaires de cette page sont valables pour les activités Java Add, Mult, Sous et Tout.
 
 public class Add1 extends AppCompatActivity {
     public int counter = 30; // temps de countdown en secondes
@@ -19,11 +22,9 @@ public class Add1 extends AppCompatActivity {
     Integer score=0;    //score en cours de l'utlisateur
     Integer result;     //résultat attendu
     Integer result1;    //résultat rentré par l'utilisateur
-    Integer triche=0;   //pour éviter la triche et vérifier le parcours de l'utilisateur
     TextView chrono; // déclaration du textview chrono présent dans layout
     private Button backbta1;    //Bouton de retour
     Button ok;  //Bouton pour valider le calcul
-    Integer pastriche=1;    //pour éviter la triche et vérifier le parcours de l'utilisateur une seconde fois
     Integer scoremax=0;     //Score maximal atteint dans le niveau
     CountDownTimer monCompteARebours;   //Compte à rebours pour le chronomètre
 
@@ -167,15 +168,6 @@ public class Add1 extends AppCompatActivity {
         //Si le resultat correspond au resultat trouvé
         if(result==result2){
             sucess++;   //Incrémentation du score par le biais de success
-            triche =1;  //Variable pour la triche
-            pastriche=0;    //Variable pour la triche
-
-
-        }else
-        {
-            triche =0;  //Variable pour la triche
-            pastriche=1;    //Variable pour la triche
-
         }
         return (result==result2);   //Retourner vrai si le résultat en bon
     }
