@@ -13,6 +13,7 @@ public class Regle extends AppCompatActivity {
     private Button backbtr;//Bouton de retour
 
     //Cette activité est vitrine : elle permet juste d'afficher les régles du jeu, et de revenir en arriére
+    //Ces régles du jeu sont écrites dans le background de l'activité
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

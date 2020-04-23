@@ -18,7 +18,6 @@ public class Mult3 extends AppCompatActivity {
     Integer score=0;
     Integer result;
     Integer result1;
-    Integer cpt=1;
     Integer triche=0;
     TextView chrono; // déclaration du textview chrono présent dans layout
     private Button backbtm3;
@@ -35,15 +34,6 @@ public class Mult3 extends AppCompatActivity {
 
         // on associe l'acticité au layout du meme nom
         setContentView(R.layout.activity_mult3);
-        /* cette activité comporte :
-        - un textview nommé chrono
-        - un bouton nommé backbt (pour revenir en arriere )
-        ...
-         */
-
-        // *********************************//
-        // mise en place du bouton "retour"
-        // *********************************//
 
         // on lie le bouton backbt avec l'attribut de classe backbta1
         this.backbtm3= (Button)findViewById(R.id.backbt);
@@ -55,13 +45,6 @@ public class Mult3 extends AppCompatActivity {
             }
         });
 
-        // *********************************//
-        // mise en place du chronometre
-        // *********************************//
-
-        // chrono le textview de l'activite sera utilisé pour afficher le chronometre
-        // On lie chrono l'attribut, avec chrono le textview du layout.
-        // on affichera la valeur du chronometre à l'interieur de chrono
         this.chrono= (TextView) findViewById(R.id.chrono);
 
         // on définit un nouveau compte à rebours : objet CountDownTimer
@@ -86,21 +69,12 @@ public class Mult3 extends AppCompatActivity {
             }
         };
 
-        // *********************************//
-        // chargement de l'ancien score"
-        // *********************************//
 
         SharedPreferences mesprefsEnregistrees = PreferenceManager.getDefaultSharedPreferences(this);
         scoremax = mesprefsEnregistrees.getInt("meilleurScore9", 0);
 
-        System.out.println("[debug] on charge le score max du tel"+ scoremax);
-        // on lance le compte a rebours :
 
         monCompteARebours.start();
-
-        // *********************************//
-        // reste du code
-        // *********************************//
 
         //Mise en place de l'affichage du calcul
         Integer a = 0;
@@ -115,10 +89,6 @@ public class Mult3 extends AppCompatActivity {
         test.setText(+a+" * "+b+" =");
         result = a*b; //Calcul du résultat attendu
 
-        //TextView cpta = (TextView) findViewById(R.id.cpta);
-        //cpta.setText(""+cpt+" / 20");
-
-
 
         //Récupére la valeur d'édit text et la vérifie
         ok = findViewById(R.id.ok);
@@ -129,12 +99,10 @@ public class Mult3 extends AppCompatActivity {
                 EditText remplir = (EditText)findViewById(R.id.remplir);
 
                 int nb = 0;
-                //TextView resultat = (TextView) findViewById(R.id.resultat);
                 try {
                     nb = (int) Integer.parseInt(remplir.getText().toString());
                 }
-                catch (Exception e) { // si ca merde car rien saisi oui texte pas un entier
-                    // resultat.setText("ERREUR");
+                catch (Exception e) {
                 }
                 boolean resultoperation = Verification(result,nb);
                 CalculScore(sucess);
@@ -149,7 +117,7 @@ public class Mult3 extends AppCompatActivity {
                     test.setText(+c+" * "+d+" =");
 
                     result = c*d; //Calcul du résultat attendu
-                    cpt=cpt+1;
+
                 }
 
                 TextView affichagescore = (TextView) findViewById(R.id.affichagescore);
@@ -170,9 +138,6 @@ public class Mult3 extends AppCompatActivity {
     public boolean Verification(int result, int result2){
         if(result==result2){
             sucess++;
-
-            //TextView resultat = (TextView) findViewById(R.id.resultat);
-            //resultat.setText("Bien joué !!!");
             triche =1;
             pastriche=0;
 
@@ -180,8 +145,6 @@ public class Mult3 extends AppCompatActivity {
 
         }else
         {
-            //TextView resultat = (TextView) findViewById(R.id.resultat);
-            // resultat.setText("Dommage !");
             triche =0;
             pastriche=1;
 
@@ -192,8 +155,6 @@ public class Mult3 extends AppCompatActivity {
     public void ScoreMax(int scoreencours){
         if(scoreencours>=scoremax){
             scoremax=scoreencours;
-
-            System.out.println("[debug] on enregistre le novueau score max du tel"+ scoremax);
 
             SharedPreferences meilleurScore = PreferenceManager.getDefaultSharedPreferences(this);
             SharedPreferences.Editor editor = meilleurScore.edit();
