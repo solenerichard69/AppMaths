@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+//Cette page affiche le score du joueur, qui vient de terminer un exercice du Niveau 3
+//Elle affiche également le score maximal atteint pour un exercice en particulier
+
 public class Affiche_score_N3 extends AppCompatActivity {
 
     private Button rejouer;
@@ -33,7 +36,7 @@ public class Affiche_score_N3 extends AppCompatActivity {
 
 
 
-        //Rester au niveau 1
+        //BOUTON REJOUER POUR RESTER AU MEME NIVEAU
         this.rejouer= (Button)findViewById(R.id.rejouer);
         rejouer.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,7 +47,7 @@ public class Affiche_score_N3 extends AppCompatActivity {
             }
         });
 
-        //Changer de niveau
+        //BOUTON REJOUER EN CHANGEANT DE NIVEAU
         this.rejouer2= (Button)findViewById(R.id.rejouer2);
         rejouer2.setOnClickListener(new View.OnClickListener() {
             @Override

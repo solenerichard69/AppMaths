@@ -13,12 +13,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class Sous1 extends AppCompatActivity {
-    public int counter = 30; // temps de countdown en secondes
+
+    //INITIALISATION\\
+    public int counter = 30;
     Integer sucess=0;
     Integer score=0;
     Integer result;
     Integer result1;
-    TextView chrono; // déclaration du textview chrono présent dans layout
+    TextView chrono;
     private Button backbts1;
     Button ok;
     Integer scoremax1=0;
@@ -29,6 +31,7 @@ public class Sous1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sous1);
 
+        //BOUTON RETOUR\\
         this.backbts1= (Button)findViewById(R.id.backbt);
         backbts1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,15 +41,13 @@ public class Sous1 extends AppCompatActivity {
             }
         });
 
-        this.chrono= (TextView) findViewById(R.id.chrono);
 
-        // on définit un nouveau compte à rebours : objet CountDownTimer
-        // on lui passe en parametre le nombre de seconde (counter) et le délai entre chaque tic (1s)
+        //MISE EN PLACE DU CHRONOMETRE\\
+        this.chrono= (TextView) findViewById(R.id.chrono);
          monCompteARebours =  new  CountDownTimer(counter*1000, 1000){
-            // on redéfinit la méthode onTick : que fait-t'on à chaque seconde décrémentée?
             public void onTick (long millisUntilFinish){
                 counter--; // on diminue le temps restant
-                chrono.setText("\n                 "+counter+""); // on met a jour l'affichage sur l'activité
+                chrono.setText("\n                 "+counter+"");
             }
 
             // on redéfinit la méthode onFinish : que fait-t'on à la fin du compte à rebours?
@@ -62,30 +63,31 @@ public class Sous1 extends AppCompatActivity {
             }
         };
 
+
+         //MISE EN MEMOIRE DU SCORE\\
         SharedPreferences mesprefsEnregistrees = PreferenceManager.getDefaultSharedPreferences(this);
         scoremax1 = mesprefsEnregistrees.getInt("meilleurScore00", 0);
 
 
-        // on lance le compte a rebours :
-
+         // on lance le compte a rebours :
         monCompteARebours.start();
 
-        //Mise en place de l'affichage du calcul
+        //MISE EN PALCE DU CALCUL\\
         Integer a = 0;
         Integer b = 0;
 
         do{
             a = 1 + (int) (Math.random() * (15));
             b = 1 + (int) (Math.random() * (15));
-        }while(b>=a) ;
+        }while(b>=a) ; //On fait en sorte de toujours avoir un résultat positif dans le choix des variables
 
 
-
+        //AFFICHAGE DU CALCUL\\
         TextView test = (TextView) findViewById(R.id.test);
         test.setText(+a+" - "+b+" =");
         result = a-b; //Calcul du résultat attendu
 
-        //Récupére la valeur d'édit text et la vérifie
+        //BOUTON OKAY\\
         ok = findViewById(R.id.ok);
         ok.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -132,10 +134,12 @@ public class Sous1 extends AppCompatActivity {
 
     }
 
+    //CALCUL DU SCORE\\
     public void CalculScore (int sucess){
         score=+sucess;
     }
 
+    //VERIFICATION DU SCORE\\
     public boolean Verification(int result, int result2){
         if(result==result2){
             sucess++;
@@ -143,6 +147,7 @@ public class Sous1 extends AppCompatActivity {
         return (result==result2);
     }
 
+    //CALCUL DU SCORE MAX\\
     public void ScoreMax(int scoreencours){
         if(scoreencours>=scoremax1){
             scoremax1=scoreencours;

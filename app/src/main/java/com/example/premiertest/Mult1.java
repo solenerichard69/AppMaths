@@ -14,18 +14,20 @@ import android.widget.TextView;
 
 
 public class Mult1 extends AppCompatActivity {
-    public int counter = 30; // temps de countdown en secondes
+
+    //INITIALISATION
+    public int counter = 30;
     Integer sucess=0;
     Integer score=0;
     Integer result;
     Integer result1;
-    TextView chrono; // déclaration du textview chrono présent dans layout
+    TextView chrono;
     private Button backbtm1;
     Button ok;
     Integer scoremax=0;
     CountDownTimer monCompteARebours;
 
-    // la méthode onCreate() est appelée à la création de l'activité
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

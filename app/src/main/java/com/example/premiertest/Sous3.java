@@ -13,6 +13,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class Sous3 extends AppCompatActivity {
+
+    //INITIALISATION\\
     public int counter = 30; // temps de countdown en secondes
     Integer sucess=0;
     Integer score=0;
@@ -24,11 +26,13 @@ public class Sous3 extends AppCompatActivity {
     Integer scoremax=0;
     CountDownTimer monCompteARebours;
 
-    ///Commit
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sous3);
+
+        //BOUTON RETOUR\\
         this.backbts3= (Button)findViewById(R.id.backbt);
         backbts3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,10 +42,9 @@ public class Sous3 extends AppCompatActivity {
             }
         });
 
+        //CHRONOMETRE\\
         this.chrono= (TextView) findViewById(R.id.chrono);
 
-        // on définit un nouveau compte à rebours : objet CountDownTimer
-        // on lui passe en parametre le nombre de seconde (counter) et le délai entre chaque tic (1s)
         CountDownTimer monCompteARebours =  new  CountDownTimer(counter*1000, 1000){
             // on redéfinit la méthode onTick : que fait-t'on à chaque seconde décrémentée?
             public void onTick (long millisUntilFinish){
@@ -62,13 +65,13 @@ public class Sous3 extends AppCompatActivity {
             }
         };
 
-
+        //MISE EN MEMOIRE\\
         SharedPreferences mesprefsEnregistrees = PreferenceManager.getDefaultSharedPreferences(this);
         scoremax = mesprefsEnregistrees.getInt("meilleurScore11", 0);
 
         monCompteARebours.start();
 
-        //Mise en place de l'affichage du calcul
+        //MISE EN PLACE DU CALCUL\\
         Integer a = 0;
         Integer b = 0;
 
@@ -78,12 +81,12 @@ public class Sous3 extends AppCompatActivity {
         }while(b>=a);
 
 
-
+        //AFFICHAGE DU TEXTE\\
         TextView test = (TextView) findViewById(R.id.test);
         test.setText(+a+" - "+b+" =");
         result = a-b; //Calcul du résultat attendu
 
-        //Récupére la valeur d'édit text et la vérifie
+        //BOUTON OKAY\\
         ok = findViewById(R.id.ok);
         ok.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -127,10 +130,13 @@ public class Sous3 extends AppCompatActivity {
 
 
     }
+
+    //CALCUL DU SCORE\\
     public void CalculScore (int sucess){
         score=+sucess;
     }
 
+    //VERIFICATION DU CALCUL\\
     public boolean Verification(int result, int result2){
         if(result==result2){
             sucess++;
@@ -138,6 +144,7 @@ public class Sous3 extends AppCompatActivity {
         return (result==result2);
     }
 
+    //CALCUL DU SCORE MAX\\
     public void ScoreMax(int scoreencours){
         if(scoreencours>=scoremax){
             scoremax=scoreencours;

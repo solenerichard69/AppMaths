@@ -13,7 +13,6 @@ public class N1 extends AppCompatActivity {
     private Button bs1;//Bouton d'acces aux soustractions
     private Button bm1;//Bouton d'acces aux multiplications
     private Button bt1;//Bouton d'acces à un mélange de tous les exercices
-   public static boolean goChrono;//Chronométre
 
 
     //Cette activité sert d'interface entre les niveaux et les exercices. L'utilisateur va juste choisir un bouton pour pouvoir ensuite réellement

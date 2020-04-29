@@ -14,6 +14,8 @@ import android.widget.TextView;
 
 
 public class Tout1 extends AppCompatActivity {
+
+    //INITIALISATION\\
     public int counter = 30; // temps de countdown en secondes
     Integer sucess=0;
     Integer score=0;
@@ -34,6 +36,8 @@ public class Tout1 extends AppCompatActivity {
         // on associe l'acticité au layout du meme nom
         setContentView(R.layout.activity_tout1);
         // on lie le bouton backbt avec l'attribut de classe backbta1
+
+        //BOUTON RETOUR\\
         this.backbtt1= (Button)findViewById(R.id.backbt);
         backbtt1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,10 +47,9 @@ public class Tout1 extends AppCompatActivity {
             }
         });
 
-        this.chrono= (TextView) findViewById(R.id.chrono);
 
-        // on définit un nouveau compte à rebours : objet CountDownTimer
-        // on lui passe en parametre le nombre de seconde (counter) et le délai entre chaque tic (1s)
+        //CHRONOMETRE\\
+        this.chrono= (TextView) findViewById(R.id.chrono);
         CountDownTimer monCompteARebours =  new  CountDownTimer(counter*1000, 1000){
             // on redéfinit la méthode onTick : que fait-t'on à chaque seconde décrémentée?
             public void onTick (long millisUntilFinish){
@@ -67,14 +70,14 @@ public class Tout1 extends AppCompatActivity {
             }
         };
 
+        //MISE EN MEMOIRE\\
         SharedPreferences mesprefsEnregistrees = PreferenceManager.getDefaultSharedPreferences(this);
         scoremax = mesprefsEnregistrees.getInt("meilleurScore4", 0);
 
         // on lance le compte a rebours :
-
         monCompteARebours.start();
 
-        //Mise en place de l'affichage du calcul
+        //MISE EN PLACE DU CALCUL\\
         Integer a = 0;
         Integer b = 0;
         Integer e = 0;
@@ -86,7 +89,7 @@ public class Tout1 extends AppCompatActivity {
         }while(b>a);
 
 
-
+        //Aléatoirement, un calcul se met en place en fonction du nombre tiré au hasard
         if(e==1){
             TextView test = (TextView) findViewById(R.id.test);
             test.setText(+a+" + "+b+" =");
@@ -104,7 +107,7 @@ public class Tout1 extends AppCompatActivity {
         }
 
 
-
+        //BOUTON OKAY\\
         ok = findViewById(R.id.ok);
         ok.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -170,11 +173,12 @@ public class Tout1 extends AppCompatActivity {
 
     }
 
-
+    //CALCUL DU SCORE\\
     public void CalculScore (int sucess){
         score=+sucess;
     }
 
+    //VERIFICATION DU RESULTAT\\
     public boolean Verification(int result, int result2){
         if(result==result2){
             sucess++;
@@ -182,6 +186,7 @@ public class Tout1 extends AppCompatActivity {
         return (result==result2);
     }
 
+    //CALCUL DU SCORE MAX
     public void ScoreMax(int scoreencours){
         if(scoreencours>=scoremax){
             scoremax=scoreencours;

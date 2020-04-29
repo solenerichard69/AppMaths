@@ -13,6 +13,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class Sous2 extends AppCompatActivity {
+
+    //INITIALISATION\\
     public int counter = 30; // temps de countdown en secondes
     Integer sucess=0;
     Integer score=0;
@@ -24,11 +26,13 @@ public class Sous2 extends AppCompatActivity {
     Integer scoremax=0;
     CountDownTimer monCompteARebours;
 
-///Commit
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sous2);
+
+        //BOUTON RETOUR\\
         this.backbts1= (Button)findViewById(R.id.backbt);
 
         backbts1.setOnClickListener(new View.OnClickListener() {
@@ -39,6 +43,8 @@ public class Sous2 extends AppCompatActivity {
             }
         });
 
+
+        //CHRONOMETRE\\
         this.chrono= (TextView) findViewById(R.id.chrono);
 
         // on définit un nouveau compte à rebours : objet CountDownTimer
@@ -63,15 +69,14 @@ public class Sous2 extends AppCompatActivity {
             }
         };
 
+        //MISE EN MEMOIRE\\
         SharedPreferences mesprefsEnregistrees = PreferenceManager.getDefaultSharedPreferences(this);
         scoremax = mesprefsEnregistrees.getInt("meilleurScore6", 0);
 
-
-        // on lance le compte a rebours :
-
+        //COMPTE A REBOUR\\
         monCompteARebours.start();
 
-        //Mise en place de l'affichage du calcul
+        //MISE EN PLACE DU CALCUL\\
         Integer a = 0;
         Integer b = 0;
 
@@ -81,12 +86,12 @@ public class Sous2 extends AppCompatActivity {
         }while(b>=a);
 
 
-
+        //AFFICHAGE DU CALCUL\\
         TextView test = (TextView) findViewById(R.id.test);
         test.setText(+a+" - "+b+" =");
         result = a-b; //Calcul du résultat attendu
 
-        //Récupére la valeur d'édit text et la vérifie
+        //BOUTON OKAY\\
         ok = findViewById(R.id.ok);
         ok.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -133,10 +138,12 @@ public class Sous2 extends AppCompatActivity {
 
 
     }
+    //CALCUL DU SCORE\\
     public void CalculScore (int sucess){
         score=+sucess;
     }
 
+    //VERIFICATION\\
     public boolean Verification(int result, int result2){
         if(result==result2){
             sucess++;
@@ -144,6 +151,7 @@ public class Sous2 extends AppCompatActivity {
         return (result==result2);
     }
 
+    //CALCUL DU SCORE MAXIMALE\\
     public void ScoreMax(int scoreencours){
         if(scoreencours>=scoremax){
             scoremax=scoreencours;
