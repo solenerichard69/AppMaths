@@ -27,7 +27,9 @@ public class N2 extends AppCompatActivity {
         backbtn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 finish();
+                Intent otherAct1 =new Intent(getApplicationContext(), Niveau.class);
+                //Retour au niveau
+                startActivity(otherAct1);
             }
         });
 

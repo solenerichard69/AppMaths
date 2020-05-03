@@ -29,7 +29,9 @@ public class N1 extends AppCompatActivity {
         backbtn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();//Met fin à l'activité en cours
+                Intent otherAct1 =new Intent(getApplicationContext(), Niveau.class);
+                //Retour au niveau
+                startActivity(otherAct1);
             }
         });
 

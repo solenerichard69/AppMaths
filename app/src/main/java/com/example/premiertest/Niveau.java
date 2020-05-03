@@ -12,7 +12,7 @@ public class Niveau extends AppCompatActivity {
     private Button bn1;//Bouton d'acces au premier niveau
     private Button bn2;//Bouton d'acces au deuxieme niveau
     private Button bn3;//Bouton d'acces au troisième niveau
-    private Button backbtn;//Bouton de retour
+    private Button backbt;//Bouton de retour
 
     //Cette activité permet à l'utilisateur de faire son choix entre les 3 niveaux.
     //Il a juste à cliquer sur l'un des 3 boutons, le bouton retour permet de revenir à la page d'accueil
@@ -58,12 +58,14 @@ public class Niveau extends AppCompatActivity {
         });
 
         //BOUTON RETOUR\\
-        this.backbtn= (Button)findViewById(R.id.backbt);
-        backbtn.setOnClickListener(new View.OnClickListener() {
+        this.backbt= (Button)findViewById(R.id.backbt);
+        backbt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                Intent otherAct1 =new Intent(getApplicationContext(), MainActivity.class);
+                //Retour au niveau
+                startActivity(otherAct1);
             }
-        });//On ferme l'activité
+        });
     }
 }
