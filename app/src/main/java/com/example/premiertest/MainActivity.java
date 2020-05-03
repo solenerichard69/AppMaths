@@ -76,10 +76,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
-
+    //Cette fonction permet d'introduire le bouton Custom, qui permet ou non de mettre en route la musique
     public void onCustomToggleClick(View view) {
-
-
     }
 }

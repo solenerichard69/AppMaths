@@ -151,7 +151,7 @@ public class Sous2 extends AppCompatActivity {
         return (result==result2);
     }
 
-    //CALCUL DU SCORE MAXIMALE\\
+    //CALCUL DU SCORE MAXIMAL\\
     public void ScoreMax(int scoreencours){
         if(scoreencours>=scoremax){
             scoremax=scoreencours;
